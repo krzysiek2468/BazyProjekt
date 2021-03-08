@@ -13,11 +13,7 @@ public class RailFence {
                 lines) {
 
            lista.add(szyfruj(line , key)) ;
-
-
         }
-
-
         return lista;
 
     }
@@ -56,11 +52,9 @@ public class RailFence {
         // ustawienie max klucza na 100
         if(0<variable && variable <100 ){
             return  true;
-        }else{
+        } else {
             return false;
         }
-
-
     }
 
     public static String szyfruj(String message, int k){
@@ -82,7 +76,6 @@ public class RailFence {
                     j = j+((2*k)-2);
                 }
 
-
                 int o = k;
                 int h = k-1;
                 for(int l=k-2; l>0; l--){
@@ -95,10 +88,6 @@ public class RailFence {
                 }
             }
         }
-
-
-
-
 
         for(int i=0; i<k; i++){
             for(int j=0; j<message.length(); j++){

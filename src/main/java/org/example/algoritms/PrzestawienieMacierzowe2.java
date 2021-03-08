@@ -10,44 +10,25 @@ public class PrzestawienieMacierzowe2 {
         List<String> lista = new ArrayList<>();
         //path3 to klucz
 
-        for (String line :
-                lines) {
-
+        for (String line : lines) {
             lista.add(szyfruj(line , path3)) ;
-
-
         }
-
-
         return lista;
 
     }
 
     public List<String> decryption(List<String> lines , String path3){
-
         List<String> lista = new ArrayList<>();
         //path3 to klucz
-
-        for (String line :
-                lines) {
-
+        for (String line : lines) {
             lista.add(odszyfruj(line , path3)) ;
-
-
         }
-
-
         return lista;
 
     }
 
     public String encryptionText(String text , String path3){
-
-
-
-
         return szyfruj(text , path3);
-
     }
 
     public boolean checkKey(String text){
@@ -63,20 +44,12 @@ public class PrzestawienieMacierzowe2 {
     }
 
     public String szyfruj(String text , String path){
-
         int rows = text.length() / path.length();
-
-
         if((text.length())%(path.length()) >0){
-
             rows++;
         }
 
         int longs = path.length();
-
-
-
-
         char[][] tab = new char[rows][longs];
         int number1=0;
         int number2=0;
@@ -127,24 +100,17 @@ public class PrzestawienieMacierzowe2 {
 
             tabela2[j]=value;
             tabela[number]='.';
-
           //  tabela3[i]=j;
-
-
         }
 
         for (int j=0;j<path.length();j++) {
             System.out.println(tabela2[j]);
         }
 
-
-
         return  text;
     }
 
     public String odszyfruj(String text, String path){
-
-
-        return  text;
+        return text;
     }
 }

@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane fx:id="primaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FilesController">
+<StackPane fx:id="primaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FilesController">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0">
             <top>
@@ -35,30 +27,30 @@
                 </HBox>
             </top>
             <left>
-                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                <VBox prefHeight="456.0" prefWidth="129.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
                     <children>
                         <Label prefHeight="20.0" prefWidth="100.0" />
-                        <Label prefHeight="28.0" prefWidth="97.0" text="   RAIL FENCE" textAlignment="CENTER" textFill="#b83434">
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="110.0" text="RAIL FENCE" textAlignment="CENTER" textFill="#b83434">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Label>
-                        <JFXButton fx:id="FF1" onAction="#switchToAlg1File" prefHeight="47.0" prefWidth="97.0" styleClass="button1" stylesheets="@../../style.css" text="FIELE" />
-                        <JFXButton fx:id="FT1" onAction="#switchToAlg1Text" prefHeight="35.0" prefWidth="102.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
-                        <Label prefHeight="50.0" prefWidth="100.0" text="PRZESTAWIENIA &#10; MACIERZOWE" textAlignment="CENTER" textFill="#b83434">
+                        <JFXButton fx:id="FF1" onAction="#switchToAlg1File" prefHeight="47.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="FT1" onAction="#switchToAlg1Text" prefHeight="47.0" prefWidth="110.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="110.0" text="PRZESTAWIENIA &#10;MACIERZOWE&#10;PRZYPADEK 1." textAlignment="CENTER" textFill="#b83434">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Label>
-                        <JFXButton fx:id="FF2" onAction="#switchToAlg2File" prefHeight="56.0" prefWidth="84.0" styleClass="button1" stylesheets="@../../style.css" text="FIELE" />
-                        <JFXButton fx:id="FT2" onAction="#switchToAlg2Text" prefHeight="39.0" prefWidth="105.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
-                  <Label prefHeight="50.0" prefWidth="100.0" text="TRZECI" textAlignment="CENTER" textFill="#b83434">
+                        <JFXButton fx:id="FF2" alignment="CENTER" onAction="#switchToAlg2File" prefHeight="47.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="FT2" onAction="#switchToAlg2Text" prefHeight="47.0" prefWidth="110.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="110.0" text="PRZESTAWIENIA&#10;MACIERZOWE&#10;PRZYPADEK 2.&#10;" textAlignment="CENTER" textFill="#b83434">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="FF3" onAction="#switchToAlg3File" prefHeight="56.0" prefWidth="84.0" styleClass="button1" stylesheets="@../../style.css" text="FIELE" />
-                  <JFXButton fx:id="FT3" onAction="#switchToAlg3Text" prefHeight="39.0" prefWidth="105.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                  <JFXButton fx:id="FF3" alignment="CENTER" onAction="#switchToAlg3File" prefHeight="47.0" prefWidth="110.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                  <JFXButton fx:id="FT3" onAction="#switchToAlg3Text" prefHeight="47.0" prefWidth="110.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
                     </children>
                 </VBox>
             </left>

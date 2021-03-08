@@ -1,6 +1,5 @@
 package org.example;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -111,7 +110,7 @@ public class FilesController {
     // changing algoritm in lesson
 
     @FXML
-    public void switchToAlg1File(ActionEvent actionEvent) {
+    public void switchToAlg1File() {
         if(state != STATE.FIRSTALGORITM){
             clearFields();
             state = STATE.FIRSTALGORITM;
@@ -120,7 +119,7 @@ public class FilesController {
     }
 
     @FXML
-    public void switchToAlg2File(ActionEvent actionEvent) {
+    public void switchToAlg2File() {
         if(state != STATE.SECONDALGORITM){
             clearFields();
             state = STATE.SECONDALGORITM;
@@ -129,7 +128,7 @@ public class FilesController {
     }
 
     @FXML
-    public void switchToAlg3File(ActionEvent actionEvent) {
+    public void switchToAlg3File() {
         if(state != STATE.THIRDALGORITM){
             clearFields();
             state = STATE.THIRDALGORITM;
@@ -138,21 +137,21 @@ public class FilesController {
     }
 
     @FXML
-    public void switchToAlg1Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg1Text() throws IOException {
         clearFields();
         TextController.state = TextController.STATE.FIRSTALGORITM;
         App.setRoot("Text");
     }
 
     @FXML
-    public void switchToAlg2Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg2Text() throws IOException {
         clearFields();
         TextController.state = TextController.STATE.SECONDALGORITM;
         App.setRoot("Text");
     }
 
     @FXML
-    public void switchToAlg3Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg3Text() throws IOException {
         clearFields();
         TextController.state = TextController.STATE.THIRDALGORITM;
         App.setRoot("Text");
@@ -172,38 +171,38 @@ public class FilesController {
     //empty for now
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) {
+    public void switchLesson1() {
 
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent) {
+    public void switchLesson2() {
 
     }
     @FXML
-    public void switchLesson3(ActionEvent actionEvent) {
+    public void switchLesson3() {
 
     }
     @FXML
-    public void switchLesson4(ActionEvent actionEvent) {
+    public void switchLesson4() {
 
     }
     @FXML
-    public void switchLesson5(ActionEvent actionEvent) {
+    public void switchLesson5() {
 
     }
     @FXML
-    public void switchLesson6(ActionEvent actionEvent) {
+    public void switchLesson6() {
 
     }
     @FXML
-    public void switchLesson7(ActionEvent actionEvent) {
+    public void switchLesson7() {
 
     }
 
     // choosing file
     // trochę powtarzania kodu , nie wiem czy nie zmienić
     @FXML
-    public void getPath1Encryption(ActionEvent actionEvent) {
+    public void getPath1Encryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -228,7 +227,7 @@ public class FilesController {
     }
 
     @FXML
-    public void getPath2Encryption(ActionEvent actionEvent) {
+    public void getPath2Encryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -252,7 +251,7 @@ public class FilesController {
     }
 
     @FXML
-    public void getPath1Decryption(ActionEvent actionEvent) {
+    public void getPath1Decryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -276,7 +275,7 @@ public class FilesController {
     }
 
     @FXML
-    public void getPath2Decryption(ActionEvent actionEvent) {
+    public void getPath2Decryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -301,14 +300,14 @@ public class FilesController {
 
 
     @FXML
-    public void submitEncryption(ActionEvent actionEvent) {
+    public void submitEncryption() {
         if (encryptionKey.getText().isEmpty() == true || encryptionPath1.getText().isEmpty() == true || encryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(filePathCorect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true){
+        }else if(filePathCorrect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
             alert.initModality(Modality.APPLICATION_MODAL);
@@ -339,14 +338,14 @@ public class FilesController {
     }
 
     @FXML
-    public void submitDecryption(ActionEvent actionEvent) {
+    public void submitDecryption() {
         if(decryptionKey.getText().isEmpty()==true || decryptionPath1.getText().isEmpty()==true || decryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(filePathCorect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true){
+        }else if(filePathCorrect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
             alert.initModality(Modality.APPLICATION_MODAL);
@@ -377,7 +376,7 @@ public class FilesController {
             }
         }
 
-        public boolean filePathCorect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
+        public boolean filePathCorrect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
         Boolean exception = false;
             try {
                 Files.readAllLines(Paths.get(path1));
@@ -408,7 +407,7 @@ public class FilesController {
 
         }
 
-        public boolean checkKeyValidation(String text){
+        public boolean checkKeyValidation(String text) {
         if(state == STATE.FIRSTALGORITM){
             RailFence alg = new RailFence();
            return alg.checkKey(text);
