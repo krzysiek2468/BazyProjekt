@@ -8,6 +8,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.example.algoritms.PrzestawienieMacierzowe1;
+import org.example.algoritms.PrzestawienieMacierzowe2;
+import org.example.algoritms.RailFence;
 import org.example.cryptography.FirstCryptoAlgorytm;
 
 import java.io.IOException;
@@ -82,6 +85,7 @@ public class TextController {
     }
     public static STATE state = STATE.FIRSTALGORITM;
 
+
     // changing algoritm in lesson
 
     @FXML
@@ -135,6 +139,7 @@ public class TextController {
         toKeyWriteField.clear();
         toWriteField.clear();
         outputField.clear();
+
     }
 
     // switching between lessons
@@ -177,6 +182,12 @@ public class TextController {
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
+        }else if(checkKeyValidation(toKeyWriteField.getText()) == false){
+            Stage stage = (Stage) primaryText.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
         }else{
 
             FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
@@ -196,6 +207,20 @@ public class TextController {
             alert.initOwner(stage);
             alert.showAndWait();
         }
+    }
+
+    public boolean checkKeyValidation(String text){
+        if(state == STATE.FIRSTALGORITM){
+            RailFence alg = new RailFence();
+            return alg.checkKey(text);
+        }else if(state == STATE.SECONDALGORITM){
+            PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
+            return  alg2.checkKey(text);
+        }else{
+            PrzestawienieMacierzowe2 alg3 = new PrzestawienieMacierzowe2();
+            return alg3.checkKey(text);
+        }
+
     }
 
 

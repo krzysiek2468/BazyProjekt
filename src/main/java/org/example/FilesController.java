@@ -9,10 +9,15 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import org.example.algoritms.PrzestawienieMacierzowe1;
+import org.example.algoritms.PrzestawienieMacierzowe2;
+import org.example.algoritms.RailFence;
 import org.example.cryptography.FirstCryptoAlgorytm;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class FilesController {
 
@@ -101,6 +106,7 @@ public class FilesController {
         THIRDALGORITM
     }
     public static STATE state = STATE.FIRSTALGORITM;
+
 
     // changing algoritm in lesson
 
@@ -296,9 +302,21 @@ public class FilesController {
 
     @FXML
     public void submitEncryption(ActionEvent actionEvent) {
-        if(encryptionKey.getText().isEmpty()==true || encryptionPath1.getText().isEmpty()==true  || encryptionPath2.getText().isEmpty() == true) {
+        if (encryptionKey.getText().isEmpty() == true || encryptionPath1.getText().isEmpty() == true || encryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
+        }else if(filePathCorect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true){
+            Stage stage = (Stage) primaryPane.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
+        }else if(checkKeyValidation(encryptionKey.getText()) == false){
+            Stage stage = (Stage) primaryPane.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -328,23 +346,83 @@ public class FilesController {
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else{
-
-            FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
-            firstCryptoAlgorytm.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
-
-            decryptionPath1.clear();
-            decryptionPath2.clear();
-            decryptionKey.clear();
-
+        }else if(filePathCorect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
+
+        }else if(checkKeyValidation(decryptionKey.getText()) == false){
+            Stage stage = (Stage) primaryPane.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
+        }else{
+
+                FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
+
+                firstCryptoAlgorytm.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
+
+                decryptionPath1.clear();
+                decryptionPath2.clear();
+                decryptionKey.clear();
+
+                Stage stage = (Stage) primaryPane.getScene().getWindow();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+                alert.initModality(Modality.APPLICATION_MODAL);
+                alert.initOwner(stage);
+                alert.showAndWait();
+            }
         }
 
-    }
+        public boolean filePathCorect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
+        Boolean exception = false;
+            try {
+                Files.readAllLines(Paths.get(path1));
+            }
+            catch(IOException e){
+                exception = true;
+                if(zeroForEncryptionOneForDecryption == 0) {
+                    encryptionPath1.clear();
+                }else {
+                    decryptionPath1.clear();
+                }
+            }
+
+            try {
+                Files.readAllLines(Paths.get(path2));
+            }
+            catch(IOException e){
+                exception = true;
+                if(zeroForEncryptionOneForDecryption == 0) {
+                    encryptionPath2.clear();
+                }
+                else {
+                    decryptionPath2.clear();
+                }
+            }
+            return exception;
+
+
+        }
+
+        public boolean checkKeyValidation(String text){
+        if(state == STATE.FIRSTALGORITM){
+            RailFence alg = new RailFence();
+           return alg.checkKey(text);
+        }else if(state ==STATE.SECONDALGORITM){
+            PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
+            return  alg2.checkKey(text);
+        }else{
+            PrzestawienieMacierzowe2 alg3 = new PrzestawienieMacierzowe2();
+            return alg3.checkKey(text);
+        }
+
+        }
+
+
 
 
 
