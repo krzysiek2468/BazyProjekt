@@ -11,7 +11,7 @@ public class PrzestawienieMacierzowe1 {
         for (String line :
                 lines) {
 
-            lista.add(szyfroj(line , prepereString(path3))) ;
+            lista.add(szyfroj(usunSpacje(line) , prepereString(path3))) ;
 
 
         }
@@ -21,13 +21,15 @@ public class PrzestawienieMacierzowe1 {
 
     public List<String> decryption(List<String> lines , String path3){
 
-        //path3 to klucz
-        List<String> output = lines;
+        List<String> lista = new ArrayList<>();
+        for (String line :
+                lines) {
 
-        //tutaj zakodowujemy lines
+            lista.add(odszyfroj(usunSpacje(line) , prepereString(path3))) ;
 
-        return output;
 
+        }
+        return lista;
     }
 
     public String encryptionText(String text , String path3){
@@ -37,7 +39,7 @@ public class PrzestawienieMacierzowe1 {
 
         //tutaj zakodowujemy lines
 
-        return odszyfroj(text , prepereString(path3));
+        return szyfroj(usunSpacje(text) , prepereString(path3));
 
     }
 
@@ -63,7 +65,7 @@ public class PrzestawienieMacierzowe1 {
                     return false;
                 }
                 if(checkedValue<= numbers.length){
-                    System.out.println(checkedValue);
+
                     if(numbers[checkedValue -1] == true){
                         return false;
                     }else {
@@ -141,7 +143,7 @@ public class PrzestawienieMacierzowe1 {
 
 
 
-        // odczzzytywanie z tablicy
+
         String returnText = "";
         int position = 0;
         for(number1 = 0; number1<rows;number1++){
@@ -149,7 +151,7 @@ public class PrzestawienieMacierzowe1 {
                 int getValueFromString = key.charAt(position)-49;
 
                 if(tab[number1][getValueFromString] != '.'){
-                    System.out.println("DDDDDDDDDDDD");
+
                     returnText += tab[number1][getValueFromString];
                 }
                 position++;
@@ -164,7 +166,7 @@ public class PrzestawienieMacierzowe1 {
 
     public String odszyfroj(String text , String key){
         int rows = text.length() / key.length();
-
+        int numbersOfEmptyFiled =key.length() - text.length()%(key.length());
 
         if((text.length())%(key.length()) >0){
 
@@ -185,15 +187,46 @@ public class PrzestawienieMacierzowe1 {
             }
         }
 
+        int a=0;
+        for(int z=0;z<numbersOfEmptyFiled;z++){
+            int number = key.length()-a;
 
 
+            for(int i=0;i<key.length()-1;i++){
+                if(key.charAt(i) -48 ==number){
+                    tab[rows-1][i]='=';
+                }
+            }
+            a++;
+
+
+//            int variable =key.charAt(key.length()-1-a)-48;
+//            tab[rows-1][variable-1]='=';
+//            System.out.println("DDDDDDDDDDDDDDDD");
+//            a++;
+
+        }
+
+        for(number1 = 0; number1<rows;number1++){
+            for(number2=0;number2<longs;number2++){
+
+                System.out.println(tab[number1][number2]);
+
+            }
+
+
+        }
 
         int m=0;
         for(number1 = 0; number1<rows;number1++){
             for(number2=0;number2<longs;number2++){
+                if(tab[number1][number2]!='='){
                 if(m<text.length()){
                     tab[number1][number2] = text.charAt(m);
                     m++;
+                }
+                }else{
+                    tab[number1][number2] = '.';
                 }
 
             }
@@ -201,14 +234,9 @@ public class PrzestawienieMacierzowe1 {
 
         }
 
-        for(number1 = 0; number1<rows;number1++){
-            for(number2=0;number2<longs;number2++){
-                System.out.println(tab[number1][number2]);
-
-            }
 
 
-        }
+
 
 
 
@@ -227,7 +255,7 @@ public class PrzestawienieMacierzowe1 {
                         if(tab[number1][number3] !='.'){
                         returnText += tab[number1][number3];}
                         else{
-                            number2++;
+
                         }
                     }
                 }
@@ -238,6 +266,15 @@ public class PrzestawienieMacierzowe1 {
 
         }
 
+        return returnText;
+    }
+    public String usunSpacje(String text){
+        String returnText = "";
+        for(int i=0;i<text.length();i++){
+            if(text.charAt(i) != ' '){
+                returnText+=text.charAt(i);
+            }
+        }
         return returnText;
     }
 }
