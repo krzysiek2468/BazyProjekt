@@ -46,7 +46,7 @@ public class PrzestawienieMacierzowe2 {
 
 
 
-        return odszyfruj(usunSpacje(text) , path3);
+        return szyfruj(usunSpacje(text) , path3);
 
     }
 

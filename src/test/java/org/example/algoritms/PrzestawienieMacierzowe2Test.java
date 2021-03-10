@@ -14,7 +14,7 @@ class PrzestawienieMacierzowe2Test {
 
     @Test
     void szyfruj() {
-        //assertEquals("HECRN CEYI ISEP SGDI RNTO AAES RMPN SSRO EEBT ETIA EEHS",test.szyfruj(test.usunSpacje("HERE IS A SECRET MESSAGE ENCIPHERED BY TRANSPOSITION"),"convenience"));
+        assertEquals("HECRN CEYI ISEP SGDI RNTO AAES RMPN SSRO EEBT ETIA EEHS ",test.szyfruj(test.usunSpacje("HERE IS A SECRET MESSAGE ENCIPHERED BY TRANSPOSITION"),"convenience"));
     }
 
     @Test
