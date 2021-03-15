@@ -8,19 +8,19 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class SecondCryptoAlgoritms {
+public class SecondCryptoAlgorithms {
     public final PrzestawienieMacierzowe3 alg;
     public final SzyfrCezara alg2;
     public final SzyfrVigenerea alg3;
 
-    public SecondCryptoAlgoritms() {
+    public SecondCryptoAlgorithms() {
         this.alg  = new PrzestawienieMacierzowe3();
         this.alg2  =new SzyfrCezara();
         this.alg3 = new SzyfrVigenerea();
 
     }
 
-    public void encrytpion(String path , String path2 , String path3 , int zeroForEncryptionOneForDecryption, Files2Controller.STATE state){
+    public void encryption(String path , String path2 , String path3 , int zeroForEncryptionOneForDecryption, Files2Controller.STATE state){
 
        try {
             List<String> lines = Files.readAllLines(Paths.get(path));

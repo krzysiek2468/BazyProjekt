@@ -10,8 +10,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.algoritms.*;
-import org.example.cryptography.FirstCryptoAlgorytm;
-import org.example.cryptography.SecondCryptoAlgoritms;
+import org.example.cryptography.SecondCryptoAlgorithms;
 
 import java.io.File;
 import java.io.IOException;
@@ -270,9 +269,9 @@ public class Files2Controller {
             alert.initOwner(stage);
             alert.showAndWait();
         } else {
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algoritms = new SecondCryptoAlgorithms();
 
-            algoritms.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
+            algoritms.encryption(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
 
             encryptionKey.clear();
             encryptionPath1.clear();
@@ -309,9 +308,9 @@ public class Files2Controller {
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algoritms = new SecondCryptoAlgorithms();
 
-            algoritms.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
+            algoritms.encryption(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
 
             decryptionPath1.clear();
             decryptionPath2.clear();

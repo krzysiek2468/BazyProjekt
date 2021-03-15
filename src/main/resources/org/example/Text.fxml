@@ -61,9 +61,10 @@
                   <JFXTextField fx:id="toKeyWriteField" layoutX="29.0" layoutY="62.0" prefHeight="30.0" prefWidth="500.0" promptText="key" />
                   <JFXButton fx:id="submit" layoutX="188.0" layoutY="122.0" onAction="#submit" prefHeight="40.0" prefWidth="160.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
                   <JFXTextField fx:id="outputField" layoutX="32.0" layoutY="162.0" prefHeight="30.0" prefWidth="500.0" promptText="Encryption result" />
-                  <JFXTextField layoutX="29.0" layoutY="246.0" prefHeight="30.0" prefWidth="500.0" promptText="Write text to decryption here" />
-                  <JFXTextField layoutX="29.0" layoutY="294.0" prefHeight="30.0" prefWidth="500.0" promptText="key" />
-                  <JFXButton layoutX="188.0" layoutY="354.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="SUBMIT" />
+                  <JFXTextField fx:id="toWriteField1" layoutX="29.0" layoutY="246.0" prefHeight="30.0" prefWidth="500.0" promptText="Write text to decryption here" />
+                  <JFXTextField fx:id="toKeyWriteField1" layoutX="29.0" layoutY="294.0" prefHeight="30.0" prefWidth="500.0" promptText="key" />
+                  <JFXButton fx:id="submit1" layoutX="202.0" layoutY="440.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" text="SUBMIT" />
+                  <JFXTextField layoutX="32.0" layoutY="380.0" prefHeight="30.0" prefWidth="500.0" promptText="Decryption result" />
                </children>
             </Pane>
          </center>

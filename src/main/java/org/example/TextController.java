@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import org.example.algoritms.PrzestawienieMacierzowe1;
 import org.example.algoritms.PrzestawienieMacierzowe2;
 import org.example.algoritms.RailFence;
-import org.example.cryptography.FirstCryptoAlgorytm;
+import org.example.cryptography.FirstCryptoAlgorithms;
 
 import java.io.IOException;
 
@@ -146,10 +146,10 @@ public class TextController {
             alert.showAndWait();
         }else{
 
-            FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
+            FirstCryptoAlgorithms firstCryptoAlgorithms = new FirstCryptoAlgorithms();
 
             try {
-                outputField.setText(firstCryptoAlgorytm.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
+                outputField.setText(firstCryptoAlgorithms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }
