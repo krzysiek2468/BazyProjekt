@@ -296,20 +296,20 @@ public class FilesController {
     public void submitDecryption(ActionEvent actionEvent) {
         if(decryptionKey.getText().isEmpty()==true || decryptionPath1.getText().isEmpty()==true || decryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files or write key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else if(filePathCorect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files paths");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
 
         }else if(checkKeyValidation(decryptionKey.getText()) == false){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
