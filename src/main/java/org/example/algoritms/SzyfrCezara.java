@@ -73,9 +73,9 @@ public class SzyfrCezara extends Algorithm {
             return  false;
         }
         // ustawienie max klucza na 100
-        if(0<variable && variable <100 ){
+        if (0<=variable && variable <=26 ){
             return  true;
-        }else{
+        } else {
             return false;
         }
     }
