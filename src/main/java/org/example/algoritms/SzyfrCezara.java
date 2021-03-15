@@ -127,5 +127,6 @@ public class SzyfrCezara extends Algoritm {
             }
         }
         return sB;
+
     }
 }

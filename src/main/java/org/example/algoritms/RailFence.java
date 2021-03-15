@@ -9,14 +9,11 @@ public class RailFence {
         List<String> lista = new ArrayList<>();
         //path3 to klucz
         int key =Integer.parseInt(path3);
-        for (String line :
-                lines) {
+        for (String line : lines) {
 
            lista.add(szyfruj(usunSpacje(line) , key)) ;
 
-
         }
-
 
         return lista;
 
@@ -54,12 +51,11 @@ public class RailFence {
             return  false;
         }
         // ustawienie max klucza na 100
-        if(0<variable && variable <100 ){
+        if (0<variable && variable <100 ) {
             return  true;
-        }else{
+        } else {
             return false;
         }
-
 
     }
 
@@ -95,10 +91,6 @@ public class RailFence {
                 }
             }
         }
-
-
-
-
 
         for(int i=0; i<k; i++){
             for(int j=0; j<message.length(); j++){
@@ -145,7 +137,6 @@ public class RailFence {
             }
         }
 
-
         char[] szyfr = message.toCharArray();
         int m = 0;
 
@@ -159,8 +150,6 @@ public class RailFence {
             }
         }
 
-
-
         char[] odszyfrowana = new char[message.length()];
 
         for(int i=0; i<k; i++){
@@ -170,7 +159,6 @@ public class RailFence {
                     odszyfrowana[j] = tab[i][j];
                     j = j+((2*k)-2);
                 }
-
 
                 int o = k;
                 int h = k-1;
@@ -184,8 +172,6 @@ public class RailFence {
                 }
             }
         }
-
-
 
         for(int i=0; i<odszyfrowana.length; i++){
             returnedMessage= returnedMessage + odszyfrowana[i];
