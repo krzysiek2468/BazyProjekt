@@ -162,15 +162,17 @@ public class PrzestawienieMacierzowe3 extends Algoritm{
             }
         }
 //Stworzenie pierwotnego tekstu
-        StringBuilder resultBuilder= new StringBuilder();
+        String returnText = "";
         for(int i =0;i<rows;i++){
             for(int j=0;j<key.length();j++){
                 if(!Character.isWhitespace(textMatrix[i][j])) {
-                    resultBuilder.append(textMatrix[i][j]);
+                    if(returnText.length()<text.length()){
+                        returnText+=textMatrix[i][j];
+                    }
                 }
             }
         }
-        return resultBuilder.toString();
+        return returnText;
 
     }
 }
