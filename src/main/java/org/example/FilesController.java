@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import org.example.algoritms.PrzestawienieMacierzowe1;
 import org.example.algoritms.PrzestawienieMacierzowe2;
 import org.example.algoritms.RailFence;
-import org.example.cryptography.FirstCryptoAlgorytm;
+import org.example.cryptography.FirstCryptoAlgorithms;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,8 +20,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class FilesController {
-
-
 
     @FXML
     public Button encryptionSubmit;
@@ -278,8 +276,8 @@ public class FilesController {
             alert.showAndWait();
         }else{
 
-            FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
-            firstCryptoAlgorytm.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
+            FirstCryptoAlgorithms firstCryptoAlgorithms = new FirstCryptoAlgorithms();
+            firstCryptoAlgorithms.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
 
             encryptionKey.clear();
             encryptionPath1.clear();
@@ -317,9 +315,9 @@ public class FilesController {
             alert.showAndWait();
         }else{
 
-                FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
+                FirstCryptoAlgorithms firstCryptoAlgorithms = new FirstCryptoAlgorithms();
 
-                firstCryptoAlgorytm.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
+                firstCryptoAlgorithms.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
 
                 decryptionPath1.clear();
                 decryptionPath2.clear();
@@ -377,10 +375,4 @@ public class FilesController {
         }
 
         }
-
-
-
-
-
-
 }

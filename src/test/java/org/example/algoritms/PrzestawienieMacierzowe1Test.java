@@ -21,8 +21,8 @@ class PrzestawienieMacierzowe1Test {
 
     @Test
     void prepereString() {
-        assertEquals("1243",test.prepereString("1-2-4-3"));
-        assertNotEquals("123",test.prepereString("1-3-2"));
+        assertEquals("1243",test.prepareString("1-2-4-3"));
+        assertNotEquals("123",test.prepareString("1-3-2"));
     }
 
     @Test

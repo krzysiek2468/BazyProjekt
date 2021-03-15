@@ -18,7 +18,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Files"), 640, 480);
+        scene = new Scene(loadFXML("Files"), 700, 700);
         scene.getStylesheets().add(Paths.get("src/main/resources/style.css").toAbsolutePath().toUri().toString());
         stage.setScene(scene);
         stage.show();

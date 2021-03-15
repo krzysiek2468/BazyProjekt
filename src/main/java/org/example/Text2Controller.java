@@ -9,8 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.algoritms.*;
-import org.example.cryptography.FirstCryptoAlgorytm;
-import org.example.cryptography.SecondCryptoAlgoritms;
+import org.example.cryptography.SecondCryptoAlgorithms;
 
 import java.io.IOException;
 
@@ -18,8 +17,6 @@ public class Text2Controller {
 
     //BUTTONS FROM SIDE MENU
     // TF - TEXT FIELD MODE BUTTON TO SWITCH TO FILE MODE
-
-
 
     @FXML
     public Button submit;
@@ -165,7 +162,7 @@ public class Text2Controller {
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algoritms = new SecondCryptoAlgorithms();
 
             try {
                 outputField.setText(algoritms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
@@ -199,10 +196,10 @@ public class Text2Controller {
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algoritms = new SecondCryptoAlgorithms();
 
             try {
-                outputField1.setText(algoritms.decrytpionText(toWriteField1.getText(), toKeyWriteField1.getText() , state));
+                outputField1.setText(algoritms.decryptionText(toWriteField1.getText(), toKeyWriteField1.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -231,6 +228,5 @@ public class Text2Controller {
         }
 
     }
-
 
 }

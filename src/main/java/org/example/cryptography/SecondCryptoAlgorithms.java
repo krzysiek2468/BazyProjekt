@@ -8,19 +8,19 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class SecondCryptoAlgoritms {
+public class SecondCryptoAlgorithms {
     public final PrzestawienieMacierzowe3 alg;
     public final SzyfrCezara alg2;
     public final SzyfrVigenerea alg3;
 
-    public SecondCryptoAlgoritms() {
+    public SecondCryptoAlgorithms() {
         this.alg  = new PrzestawienieMacierzowe3();
         this.alg2  =new SzyfrCezara();
         this.alg3 = new SzyfrVigenerea();
 
     }
 
-    public void encrytpion(String path , String path2 , String path3 , int zeroForEncryptionOneForDecryption, Files2Controller.STATE state){
+    public void encryption(String path , String path2 , String path3 , int zeroForEncryptionOneForDecryption, Files2Controller.STATE state){
 
        try {
             List<String> lines = Files.readAllLines(Paths.get(path));
@@ -47,7 +47,6 @@ public class SecondCryptoAlgoritms {
                 }
             }
 
-
             // tutaj trzeba dodać algorytm krypto
 
             FileWriter writer = new FileWriter(path2);
@@ -59,12 +58,10 @@ public class SecondCryptoAlgoritms {
             e.printStackTrace();
         }
 
-
-
     }
     // te algorytmy można w oddzielnym pakiecie zrobić
 
-    public String encrytpionText(String text, String text1, Text2Controller.STATE state) {
+    public String encryptionText(String text, String text1, Text2Controller.STATE state) {
         String returedText;
         if(state == Text2Controller.STATE.FIRSTALGORITM){
             returedText = alg.encryptionText(text,text1);
@@ -79,7 +76,7 @@ public class SecondCryptoAlgoritms {
         return returedText;
     }
 
-    public String decrytpionText(String text, String text1, Text2Controller.STATE state) {
+    public String decryptionText(String text, String text1, Text2Controller.STATE state) {
         String returedText;
         if(state == Text2Controller.STATE.FIRSTALGORITM){
             returedText = alg.decryptionText(text,text1);

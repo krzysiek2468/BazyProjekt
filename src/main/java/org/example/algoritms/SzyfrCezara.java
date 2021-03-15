@@ -3,7 +3,7 @@ package org.example.algoritms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SzyfrCezara extends Algoritm{
+public class SzyfrCezara extends Algorithm {
 
     public static int eno1(char z, int k) {
         return z+k;
@@ -30,14 +30,11 @@ public class SzyfrCezara extends Algoritm{
         List<String> lista = new ArrayList<>();
         //path3 to klucz
 
-        for (String line :
-                lines) {
+        for (String line : lines) {
 
             lista.add(szyfruj(usunSpacje(line) , path3)) ;
 
-
         }
-
 
         return lista;
     }
@@ -52,9 +49,7 @@ public class SzyfrCezara extends Algoritm{
 
             lista.add(odszyfruj(usunSpacje(line) , path3)) ;
 
-
         }
-
 
         return lista;
     }

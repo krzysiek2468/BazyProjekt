@@ -2,23 +2,20 @@ package org.example.algoritms;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
-public class PrzestawienieMacierzowe3 extends Algoritm{
+public class PrzestawienieMacierzowe3 extends Algorithm {
     @Override
     public List<String> encryption(List<String> lines, String path3) {
         List<String> lista = new ArrayList<>();
         //path3 to klucz
 
-        for (String line :
-                lines) {
+        for (String line : lines) {
 
             lista.add(szyfruj(usunSpacje(line) , path3)) ;
 
 
         }
-
 
         return lista;
     }
@@ -32,7 +29,6 @@ public class PrzestawienieMacierzowe3 extends Algoritm{
                 lines) {
 
             lista.add(odszyfruj(usunSpacje(line) , path3)) ;
-
 
         }
 

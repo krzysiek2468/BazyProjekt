@@ -3,7 +3,7 @@ package org.example.algoritms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SzyfrVigenerea extends Algoritm{
+public class SzyfrVigenerea extends Algorithm {
     @Override
     public List<String> encryption(List<String> lines, String path3) {
         List<String> lista = new ArrayList<>();
@@ -31,9 +31,7 @@ public class SzyfrVigenerea extends Algoritm{
 
             lista.add(odszyfruj(usunSpacje(line) , path3)) ;
 
-
         }
-
 
         return lista;
     }
