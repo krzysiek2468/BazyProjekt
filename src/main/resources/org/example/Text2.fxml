@@ -59,12 +59,12 @@
                     <children>
                         <JFXTextField fx:id="toWriteField" alignment="BOTTOM_LEFT" layoutX="24.0" layoutY="58.0" prefHeight="30.0" prefWidth="500.0" promptText="Write text to encryption heare" />
                         <JFXTextField fx:id="toKeyWriteField" layoutX="24.0" layoutY="111.0" prefHeight="30.0" prefWidth="203.0" promptText="key" />
-                        <JFXButton fx:id="submit" layoutX="308.0" layoutY="114.0" onAction="#submit" prefHeight="25.0" prefWidth="122.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
-                        <JFXTextField fx:id="outputField" layoutX="24.0" layoutY="164.0" prefHeight="30.0" prefWidth="500.0" />
+                        <JFXButton fx:id="submit" layoutX="330.0" layoutY="114.0" onAction="#submit" prefHeight="25.0" prefWidth="122.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
+                        <JFXTextField fx:id="outputField" layoutX="24.0" layoutY="164.0" prefHeight="30.0" prefWidth="500.0" promptText="Encryption result" />
                   <JFXTextField fx:id="toWriteField1" alignment="BOTTOM_LEFT" layoutX="24.0" layoutY="228.0" prefHeight="30.0" prefWidth="500.0" promptText="Write text to decryption heare" />
                   <JFXTextField fx:id="toKeyWriteField1" layoutX="24.0" layoutY="281.0" prefHeight="20.0" prefWidth="178.0" promptText="key" />
-                  <JFXButton fx:id="submit1" layoutX="308.0" layoutY="293.0" onAction="#submit1" prefHeight="25.0" prefWidth="122.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
-                  <JFXTextField fx:id="outputField1" layoutX="24.0" layoutY="385.0" prefHeight="30.0" prefWidth="500.0" />
+                  <JFXButton fx:id="submit1" layoutX="330.0" layoutY="281.0" onAction="#submit1" prefHeight="25.0" prefWidth="122.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
+                  <JFXTextField fx:id="outputField1" layoutX="24.0" layoutY="328.0" prefHeight="30.0" prefWidth="500.0" promptText="Decryption result" />
                     </children>
                 </Pane>
             </center>
