@@ -19,8 +19,6 @@ public class Text2Controller {
     //BUTTONS FROM SIDE MENU
     // TF - TEXT FIELD MODE BUTTON TO SWITCH TO FILE MODE
 
-
-
     @FXML
     public Button submit;
 
@@ -153,22 +151,22 @@ public class Text2Controller {
     public void submit(ActionEvent actionEvent) {
         if(toWriteField.getText().isEmpty()==true || toKeyWriteField.getText().isEmpty()==true ) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text, or key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(checkKeyValidation(toKeyWriteField.getText()) == false){
+        }else if(checkKeyValidation(toKeyWriteField.getText()) == false) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgoritms algorithms = new SecondCryptoAlgoritms();
 
             try {
-                outputField.setText(algoritms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
+                outputField.setText(algorithms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }

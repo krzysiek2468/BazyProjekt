@@ -132,15 +132,15 @@ public class TextController {
 
     @FXML
     public void submit(ActionEvent actionEvent) {
-        if(toWriteField.getText().isEmpty()==true || toKeyWriteField.getText().isEmpty()==true ) {
+        if (toWriteField.getText().isEmpty()==true || toKeyWriteField.getText().isEmpty()==true) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text, or key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(checkKeyValidation(toKeyWriteField.getText()) == false){
+        }else if (checkKeyValidation(toKeyWriteField.getText()) == false) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -158,7 +158,7 @@ public class TextController {
             toKeyWriteField.clear();
 
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -166,18 +166,15 @@ public class TextController {
     }
 
     public boolean checkKeyValidation(String text){
-        if(state == STATE.FIRSTALGORITM){
+        if (state == STATE.FIRSTALGORITM) {
             RailFence alg = new RailFence();
             return alg.checkKey(text);
-        }else if(state == STATE.SECONDALGORITM){
+        } else if (state == STATE.SECONDALGORITM) {
             PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
             return  alg2.checkKey(text);
-        }else{
+        } else {
             PrzestawienieMacierzowe2 alg3 = new PrzestawienieMacierzowe2();
             return alg3.checkKey(text);
         }
-
     }
-
-
 }
