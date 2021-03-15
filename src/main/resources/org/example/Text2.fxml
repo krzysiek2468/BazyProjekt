@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="primaryText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Text2Controller">
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <top>
+                <HBox prefHeight="44.0" prefWidth="750.0" spacing="10.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="44.0" prefWidth="100.0" />
+                        <JFXButton fx:id="TB1" onAction="#switchLesson1" prefHeight="47.0" prefWidth="80.0" styleClass="button2" stylesheets="@../../style.css" text="Lesson1" />
+                        <JFXButton fx:id="TB2" onAction="#switchLesson2" prefHeight="47.0" prefWidth="80.0" styleClass="button3" stylesheets="@../../style.css" text="Lesson2" />
+                        <JFXButton fx:id="TB3" onAction="#switchLesson3" prefHeight="47.0" prefWidth="80.0" styleClass="button4" stylesheets="@../../style.css" text="Lesson3" />
+                        <JFXButton fx:id="TB4" onAction="#switchLesson4" prefHeight="47.0" prefWidth="80.0" styleClass="button5" stylesheets="@../../style.css" text="Lesson4" />
+                        <JFXButton fx:id="TB5" onAction="#switchLesson5" prefHeight="47.0" prefWidth="80.0" styleClass="button6" stylesheets="@../../style.css" text="Lesson5" />
+                        <JFXButton fx:id="TB6" onAction="#switchLesson6" prefHeight="47.0" prefWidth="80.0" styleClass="button7" stylesheets="@../../style.css" text="Lesson6" />
+                        <JFXButton fx:id="TB7" onAction="#switchLesson7" prefHeight="47.0" prefWidth="80.0" styleClass="button8" stylesheets="@../../style.css" text="Lesson7" />
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </HBox>
+            </top>
+            <left>
+                <VBox prefHeight="456.0" prefWidth="135.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="20.0" prefWidth="100.0" />
+                        <Label alignment="CENTER" prefHeight="52.0" prefWidth="119.0" text="PRZESTAWIENIA&#10;MACIERZOWE&#10;PRZYKŁAD 3." textAlignment="CENTER" textFill="#b83434">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="TF1" onAction="#switchToAlg1File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="TT1" onAction="#switchToAlg1Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="120.0" text="SZYFR CEZARA&#10;" textAlignment="CENTER" textFill="#b83434">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="TF2" onAction="#switchToAlg2File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="TT2" onAction="#switchToAlg2Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="120.0" text="SZYFROWANIE&#10;VIGENEREA&#10;" textAlignment="CENTER" textFill="#b83434">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="TF3" onAction="#switchToAlg3File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="TT3" onAction="#switchToAlg3Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                    </children>
+                </VBox>
+            </left>
+            <center>
+                <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <JFXTextField fx:id="toWriteField" alignment="BOTTOM_LEFT" layoutX="49.0" layoutY="30.0" prefHeight="56.0" prefWidth="550.0" promptText="Write text to encryption heare" />
+                        <JFXTextField fx:id="toKeyWriteField" layoutX="49.0" layoutY="113.0" prefHeight="20.0" prefWidth="178.0" promptText="key" />
+                        <JFXButton fx:id="submit" layoutX="283.0" layoutY="113.0" onAction="#submit" prefHeight="25.0" prefWidth="122.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
+                        <JFXTextField fx:id="outputField" layoutX="39.0" layoutY="157.0" prefHeight="54.0" prefWidth="550.0" />
+                  <JFXTextField fx:id="toWriteField1" alignment="BOTTOM_LEFT" layoutX="33.0" layoutY="228.0" prefHeight="56.0" prefWidth="550.0" promptText="Write text to decryption heare" />
+                  <JFXTextField fx:id="toKeyWriteField1" layoutX="33.0" layoutY="313.0" prefHeight="20.0" prefWidth="178.0" promptText="key" />
+                  <JFXButton fx:id="submit1" layoutX="283.0" layoutY="313.0" onAction="#submit1" prefHeight="25.0" prefWidth="122.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" />
+                  <JFXTextField fx:id="outputField1" layoutX="33.0" layoutY="362.0" prefHeight="54.0" prefWidth="550.0" />
+                    </children>
+                </Pane>
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>

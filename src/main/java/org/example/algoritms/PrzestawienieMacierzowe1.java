@@ -11,7 +11,7 @@ public class PrzestawienieMacierzowe1 {
         for (String line :
                 lines) {
 
-            lista.add(szyfroj(usunSpacje(line) , prepereString(path3))) ;
+            lista.add(szyfruj(usunSpacje(line) , prepereString(path3))) ;
 
 
         }
@@ -25,7 +25,7 @@ public class PrzestawienieMacierzowe1 {
         for (String line :
                 lines) {
 
-            lista.add(odszyfroj(usunSpacje(line) , prepereString(path3))) ;
+            lista.add(odszyfruj(usunSpacje(line) , prepereString(path3))) ;
 
 
         }
@@ -39,7 +39,7 @@ public class PrzestawienieMacierzowe1 {
 
         //tutaj zakodowujemy lines
 
-        return szyfroj(usunSpacje(text) , prepereString(path3));
+        return szyfruj(usunSpacje(text) , prepereString(path3));
 
     }
 
@@ -98,7 +98,7 @@ public class PrzestawienieMacierzowe1 {
         return keyy;
     }
 
-    public String szyfroj(String text , String key){
+    public String szyfruj(String text , String key){
 
 
         int rows = text.length() / key.length();
@@ -164,7 +164,7 @@ public class PrzestawienieMacierzowe1 {
 
     }
 
-    public String odszyfroj(String text , String key){
+    public String odszyfruj(String text , String key){
         int rows = text.length() / key.length();
         int numbersOfEmptyFiled =key.length() - text.length()%(key.length());
 

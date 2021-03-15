@@ -27,11 +27,11 @@ class PrzestawienieMacierzowe1Test {
 
     @Test
     void szyfroj() {
-        assertEquals("YCPRGTROHAYPAOS",test.szyfroj("CRYPTOGRAPHYOSA","3142"));
+        assertEquals("YCPRGTROHAYPAOS",test.szyfruj("CRYPTOGRAPHYOSA","3142"));
     }
 
     @Test
     void odszyfroj() {
-        assertEquals("CRYPTOGRAPHYOSA",test.odszyfroj("YCPRGTROHAYPAOS","3142"));
+        assertEquals("CRYPTOGRAPHYOSA",test.odszyfruj("YCPRGTROHAYPAOS","3142"));
     }
 }
