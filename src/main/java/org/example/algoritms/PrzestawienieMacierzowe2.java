@@ -10,25 +10,44 @@ public class PrzestawienieMacierzowe2 {
         List<String> lista = new ArrayList<>();
         //path3 to klucz
 
-        for (String line : lines) {
-            lista.add(szyfruj(line , path3)) ;
+        for (String line :
+                lines) {
+
+            lista.add(szyfruj(usunSpacje(line) , path3)) ;
+
+
         }
+
+
         return lista;
 
     }
 
     public List<String> decryption(List<String> lines , String path3){
+
         List<String> lista = new ArrayList<>();
         //path3 to klucz
-        for (String line : lines) {
-            lista.add(odszyfruj(line , path3)) ;
+
+        for (String line :
+                lines) {
+
+            lista.add(odszyfruj(usunSpacje(line) , path3)) ;
+
+
         }
+
+
         return lista;
 
     }
 
     public String encryptionText(String text , String path3){
-        return szyfruj(text , path3);
+
+
+
+
+        return szyfruj(usunSpacje(text) , path3);
+
     }
 
     public boolean checkKey(String text){
@@ -43,74 +62,162 @@ public class PrzestawienieMacierzowe2 {
 
     }
 
-    public String szyfruj(String text , String path){
-        int rows = text.length() / path.length();
-        if((text.length())%(path.length()) >0){
-            rows++;
-        }
+    public String szyfruj(String text , String key){
 
-        int longs = path.length();
-        char[][] tab = new char[rows][longs];
-        int number1=0;
-        int number2=0;
-        int m=0;
 
-        for(number1 = 0; number1<rows;number1++){
-            for(number2=0;number2<longs;number2++){
-                if(m<text.length()){
-                    tab[number1][number2] = text.charAt(m);
-                    m++;
+        int pom=0;
+
+        String sB = "";
+
+        ArrayList<Integer> positions = new ArrayList<>();
+
+        for (char c='a'; c<='z'; c++) {
+            for (int i = 0; i<key.length(); i++) {
+                if (key.charAt(i) == Character.toUpperCase(c) || key.charAt(i) == Character.toLowerCase(c)) {
+                    positions.add(i);
                 }
             }
         }
-        List<String> lista = new ArrayList<>();
-        int z=0;
-        String returnText = "";
-        for(number1 = 0; number1<longs;number1++){
-            for(number2=0;number2<rows;number2++){
-                if(tab[number2][number1] !='.'){
-                   returnText+= tab[number2][number1];
+
+        int poems = text.length()/key.length();
+        int columns = key.length();
+        String[][] table;
+        if (text.length()%key.length() != 0) {
+            ++poems;
+        }
+
+
+        table = new String[poems][columns];
+        for (int i = 0; i < poems; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (pom<text.length())
+                {
+                    table[i][j] = String.valueOf((text.charAt(pom)));
+                    pom++;
+                }
+                else {
+                    table[i][j] = String.valueOf('.');
                 }
             }
-            lista.add(returnText);
-            returnText="";
         }
 
-        char[] tabela = new char[path.length()];
-        char[] tabela2 = new char[path.length()];
-        int[] tabela3 = new int[path.length()];
-        for(int i=0;i<path.length();i++){
-            tabela[i] = path.charAt(i);
 
-        }
-        int count = path.length();
-        char value = 0;
-        int number = 0;
-        int i=0;
-        for (int j=0;j<path.length();j++){
-            for(i=0;i<count;i++){
-                if(tabela[number]!='.') {
-                    if (value < tabela[i]) {
-                        value = path.charAt(i);
-                        number = i;
-                    }
+
+        for (int j=0; j<columns; j++) {
+            int k = positions.get(j);
+            for (int i = 0; i < poems; i++) {
+                if (!(table[i][k].equals("."))) {
+                    sB+=(table[i][k]);
                 }
-
             }
-
-            tabela2[j]=value;
-            tabela[number]='.';
-          //  tabela3[i]=j;
+            sB+= " ";
         }
+        positions.clear();
 
-        for (int j=0;j<path.length();j++) {
-            System.out.println(tabela2[j]);
-        }
 
-        return  text;
+
+
+
+        return  sB;
     }
 
-    public String odszyfruj(String text, String path){
-        return text;
+    public String odszyfruj(String text, String key){
+
+
+
+        String sB = "";
+
+        ArrayList<Integer> positions = new ArrayList<>();
+
+        for (char c='a'; c<='z'; c++) {
+            for (int i = 0; i<key.length(); i++) {
+                if (key.charAt(i) == Character.toUpperCase(c) || key.charAt(i) == Character.toLowerCase(c)) {
+                    positions.add(i);
+                }
+            }
+        }
+
+        int poems = text.length()/key.length();
+        int columns = key.length();
+        String[][] table;
+        int numberOfFileldsWithMoreLetters = 0;
+        if (text.length()%key.length() != 0) {
+            numberOfFileldsWithMoreLetters = text.length()%key.length();
+            ++poems;
+        }
+        ArrayList<Integer> positions2 = new ArrayList<>();
+        for(int p=0;p<numberOfFileldsWithMoreLetters;p++){
+            positions2.add(positions.get(p));
+
+        }
+
+        System.out.println("positions.get(i)");
+        System.out.println(positions2.size());
+
+        int pom=0;
+        table = new String[poems][columns];
+        for (int i = 0; i < columns; i++) {
+
+            for (int j = 0; j < poems; j++) {
+                    if(pom<text.length()){
+                    if (positions2.contains(i)) {
+                        table[j][positions.get(i)] = String.valueOf((text.charAt(pom)));
+                        pom++;
+                    } else {
+                        if (i != columns - 2) {
+                            table[j][positions.get(i)] = String.valueOf((text.charAt(pom)));
+                            pom++;
+                        } else {
+                            table[j][positions.get(i)] = String.valueOf('.');
+                        }
+                    }
+
+
+                }
+                System.out.println(positions.get(i));
+
+            }
+
+
+        }
+
+        for (int j=0; j<columns; j++) {
+
+            for (int i = 0; i < poems; i++) {
+               System.out.println(table[i][j]);
+            }
+
+        }
+
+
+
+        for (int j=0; j<columns; j++) {
+            int k = positions.get(j);
+            for (int i = 0; i < poems; i++) {
+                if (!(table[i][k].equals("."))) {
+                    sB+=(table[i][k]);
+                }
+            }
+            if(j<=columns-2){
+            sB+= " ";}
+        }
+        positions.clear();
+
+
+
+
+
+        return  sB;
+    }
+
+
+    public String usunSpacje(String text){
+        String returnText = "";
+        for(int i=0;i<text.length();i++){
+            if(text.charAt(i) != ' '){
+                returnText+=text.charAt(i);
+            }
+        }
+        return returnText;
     }
 }

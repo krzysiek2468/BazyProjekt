@@ -8,14 +8,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.example.algoritms.PrzestawienieMacierzowe1;
-import org.example.algoritms.PrzestawienieMacierzowe2;
-import org.example.algoritms.RailFence;
+import org.example.algoritms.*;
 import org.example.cryptography.FirstCryptoAlgorytm;
+import org.example.cryptography.SecondCryptoAlgoritms;
 
 import java.io.IOException;
 
-public class TextController {
+public class Text2Controller {
+
+    //BUTTONS FROM SIDE MENU
+    // TF - TEXT FIELD MODE BUTTON TO SWITCH TO FILE MODE
+
+
 
     @FXML
     public Button submit;
@@ -28,6 +32,18 @@ public class TextController {
 
     @FXML
     public TextField outputField;
+
+    @FXML
+    public Button submit1;
+
+    @FXML
+    public TextField toWriteField1;
+
+    @FXML
+    public TextField toKeyWriteField1;
+
+    @FXML
+    public TextField outputField1;
 
     @FXML
     public StackPane primaryText;
@@ -46,22 +62,22 @@ public class TextController {
     @FXML
     public void switchToAlg1File(ActionEvent actionEvent) throws IOException {
         clearFields();
-        FilesController.state = FilesController.STATE.FIRSTALGORITM;
-        App.setRoot("Files");
+        Files2Controller.state = Files2Controller.STATE.FIRSTALGORITM;
+        App.setRoot("Files2");
     }
 
     @FXML
     public void switchToAlg2File(ActionEvent actionEvent) throws IOException {
         clearFields();
-        FilesController.state = FilesController.STATE.SECONDALGORITM;
-        App.setRoot("Files");
+        Files2Controller.state = Files2Controller.STATE.SECONDALGORITM;
+        App.setRoot("Files2");
     }
 
     @FXML
     public void switchToAlg3File(ActionEvent actionEvent) throws IOException {
         clearFields();
-        FilesController.state = FilesController.STATE.THIRDALGORITM;
-        App.setRoot("Files");
+        Files2Controller.state = Files2Controller.STATE.THIRDALGORITM;
+        App.setRoot("Files2");
     }
 
     @FXML
@@ -94,6 +110,9 @@ public class TextController {
         toKeyWriteField.clear();
         toWriteField.clear();
         outputField.clear();
+        toKeyWriteField1.clear();
+        toWriteField1.clear();
+        outputField1.clear();
 
     }
 
@@ -101,12 +120,12 @@ public class TextController {
     //empty for now
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) {
+    public void switchLesson1(ActionEvent actionEvent) throws IOException {
+        App.setRoot("Text");
 
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent) throws IOException {
-        App.setRoot("Text2");
+    public void switchLesson2(ActionEvent actionEvent) {
 
     }
     @FXML
@@ -146,10 +165,10 @@ public class TextController {
             alert.showAndWait();
         }else{
 
-            FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
+            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
 
             try {
-                outputField.setText(firstCryptoAlgorytm.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
+                outputField.setText(algoritms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -164,16 +183,50 @@ public class TextController {
             alert.showAndWait();
         }
     }
+    @FXML
+    public void submit1(ActionEvent actionEvent) {
+        if(toWriteField1.getText().isEmpty()==true || toKeyWriteField1.getText().isEmpty()==true ) {
+            Stage stage = (Stage) primaryText.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text, or key");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
+        }else if(checkKeyValidation(toKeyWriteField1.getText()) == false){
+            Stage stage = (Stage) primaryText.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
+        }else{
+
+            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+
+            try {
+                outputField1.setText(algoritms.decrytpionText(toWriteField1.getText(), toKeyWriteField1.getText() , state));
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+            toWriteField1.clear();
+            toKeyWriteField1.clear();
+
+            Stage stage = (Stage) primaryText.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
+        }
+    }
 
     public boolean checkKeyValidation(String text){
         if(state == STATE.FIRSTALGORITM){
-            RailFence alg = new RailFence();
+            PrzestawienieMacierzowe3 alg = new PrzestawienieMacierzowe3();
             return alg.checkKey(text);
         }else if(state == STATE.SECONDALGORITM){
-            PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
+            SzyfrCezara alg2 = new SzyfrCezara();
             return  alg2.checkKey(text);
         }else{
-            PrzestawienieMacierzowe2 alg3 = new PrzestawienieMacierzowe2();
+            SzyfrVigenerea alg3 = new SzyfrVigenerea();
             return alg3.checkKey(text);
         }
 

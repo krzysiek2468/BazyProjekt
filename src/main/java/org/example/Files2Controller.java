@@ -9,17 +9,17 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import org.example.algoritms.PrzestawienieMacierzowe1;
-import org.example.algoritms.PrzestawienieMacierzowe2;
-import org.example.algoritms.RailFence;
+import org.example.algoritms.*;
 import org.example.cryptography.FirstCryptoAlgorytm;
+import org.example.cryptography.SecondCryptoAlgoritms;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FilesController {
+public class Files2Controller {
+
 
 
 
@@ -95,22 +95,22 @@ public class FilesController {
     @FXML
     public void switchToAlg1Text(ActionEvent actionEvent) throws IOException {
         clearFields();
-        TextController.state = TextController.STATE.FIRSTALGORITM;
-        App.setRoot("Text");
+        Text2Controller.state = Text2Controller.STATE.FIRSTALGORITM;
+        App.setRoot("Text2");
     }
 
     @FXML
     public void switchToAlg2Text(ActionEvent actionEvent) throws IOException {
         clearFields();
-        TextController.state = TextController.STATE.SECONDALGORITM;
-        App.setRoot("Text");
+        Text2Controller.state = Text2Controller.STATE.SECONDALGORITM;
+        App.setRoot("Text2");
     }
 
     @FXML
     public void switchToAlg3Text(ActionEvent actionEvent) throws IOException {
         clearFields();
-        TextController.state = TextController.STATE.THIRDALGORITM;
-        App.setRoot("Text");
+        Text2Controller.state = Text2Controller.STATE.THIRDALGORITM;
+        App.setRoot("Text2");
     }
 
     // to clear fields when  changing algoritm or mode
@@ -127,12 +127,12 @@ public class FilesController {
     //empty for now
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) {
+    public void switchLesson1(ActionEvent actionEvent) throws IOException {
+        App.setRoot("Files");
 
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent) throws IOException {
-        App.setRoot("Files2");
+    public void switchLesson2(ActionEvent actionEvent) {
 
     }
     @FXML
@@ -277,9 +277,9 @@ public class FilesController {
             alert.initOwner(stage);
             alert.showAndWait();
         }else{
+            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
 
-            FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
-            firstCryptoAlgorytm.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
+            algoritms.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
 
             encryptionKey.clear();
             encryptionPath1.clear();
@@ -317,66 +317,66 @@ public class FilesController {
             alert.showAndWait();
         }else{
 
-                FirstCryptoAlgorytm firstCryptoAlgorytm = new FirstCryptoAlgorytm();
+            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
 
-                firstCryptoAlgorytm.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
+            algoritms.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
 
-                decryptionPath1.clear();
-                decryptionPath2.clear();
-                decryptionKey.clear();
+            decryptionPath1.clear();
+            decryptionPath2.clear();
+            decryptionKey.clear();
 
-                Stage stage = (Stage) primaryPane.getScene().getWindow();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
-                alert.initModality(Modality.APPLICATION_MODAL);
-                alert.initOwner(stage);
-                alert.showAndWait();
-            }
+            Stage stage = (Stage) primaryPane.getScene().getWindow();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            alert.initModality(Modality.APPLICATION_MODAL);
+            alert.initOwner(stage);
+            alert.showAndWait();
         }
+    }
 
-        public boolean filePathCorect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
+    public boolean filePathCorect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
         Boolean exception = false;
-            try {
-                Files.readAllLines(Paths.get(path1));
+        try {
+            Files.readAllLines(Paths.get(path1));
+        }
+        catch(IOException e){
+            exception = true;
+            if(zeroForEncryptionOneForDecryption == 0) {
+                encryptionPath1.clear();
+            }else {
+                decryptionPath1.clear();
             }
-            catch(IOException e){
-                exception = true;
-                if(zeroForEncryptionOneForDecryption == 0) {
-                    encryptionPath1.clear();
-                }else {
-                    decryptionPath1.clear();
-                }
-            }
-
-            try {
-                Files.readAllLines(Paths.get(path2));
-            }
-            catch(IOException e){
-                exception = true;
-                if(zeroForEncryptionOneForDecryption == 0) {
-                    encryptionPath2.clear();
-                }
-                else {
-                    decryptionPath2.clear();
-                }
-            }
-            return exception;
-
-
         }
 
-        public boolean checkKeyValidation(String text){
+        try {
+            Files.readAllLines(Paths.get(path2));
+        }
+        catch(IOException e){
+            exception = true;
+            if(zeroForEncryptionOneForDecryption == 0) {
+                encryptionPath2.clear();
+            }
+            else {
+                decryptionPath2.clear();
+            }
+        }
+        return exception;
+
+
+    }
+
+    public boolean checkKeyValidation(String text){
         if(state == STATE.FIRSTALGORITM){
-            RailFence alg = new RailFence();
-           return alg.checkKey(text);
+            PrzestawienieMacierzowe3 alg = new PrzestawienieMacierzowe3();
+            return alg.checkKey(text);
         }else if(state ==STATE.SECONDALGORITM){
-            PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
+            SzyfrCezara alg2 = new SzyfrCezara();
             return  alg2.checkKey(text);
         }else{
-            PrzestawienieMacierzowe2 alg3 = new PrzestawienieMacierzowe2();
+           SzyfrVigenerea alg3 = new SzyfrVigenerea();
             return alg3.checkKey(text);
         }
 
-        }
+    }
 
 
 

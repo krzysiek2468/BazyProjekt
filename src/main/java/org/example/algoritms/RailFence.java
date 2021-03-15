@@ -12,8 +12,12 @@ public class RailFence {
         for (String line :
                 lines) {
 
-           lista.add(szyfruj(line , key)) ;
+           lista.add(szyfruj(usunSpacje(line) , key)) ;
+
+
         }
+
+
         return lista;
 
     }
@@ -24,7 +28,7 @@ public class RailFence {
         int key =Integer.parseInt(path3);
         for (String line :
                 lines) {
-            lista.add(rozszyfruj(line , key)) ;
+            lista.add(rozszyfruj(usunSpacje(line) , key)) ;
         }
 
         return lista;
@@ -38,7 +42,7 @@ public class RailFence {
 
         //tutaj zakodowujemy lines
 
-        return szyfruj(text , Integer.parseInt(path3));
+        return szyfruj(usunSpacje(text) , Integer.parseInt(path3));
 
     }
 
@@ -52,14 +56,16 @@ public class RailFence {
         // ustawienie max klucza na 100
         if(0<variable && variable <100 ){
             return  true;
-        } else {
+        }else{
             return false;
         }
+
+
     }
 
-    public static String szyfruj(String message, int k){
+    public  String szyfruj(String message, int k){
         String[][] tab = new String[k][message.length()];
-        String cipheredMessage = "";
+        String returnedMessage= "";
 
 
         for(int i=0; i<tab.length; i++){
@@ -76,6 +82,7 @@ public class RailFence {
                     j = j+((2*k)-2);
                 }
 
+
                 int o = k;
                 int h = k-1;
                 for(int l=k-2; l>0; l--){
@@ -89,21 +96,25 @@ public class RailFence {
             }
         }
 
+
+
+
+
         for(int i=0; i<k; i++){
             for(int j=0; j<message.length(); j++){
                 if(tab[i][j] != "."){
-                    //System.out.print(tab[i][j]);
-                    cipheredMessage= cipheredMessage + tab[i][j];
+
+                    returnedMessage= returnedMessage + tab[i][j];
                 }
             }
         }
 
-        return cipheredMessage;
+        return returnedMessage;
     }
 
-    public static String rozszyfruj(String message, int k) {
+    public  String rozszyfruj(String message, int k) {
         char[][] tab = new char[k][message.length()];
-        String decryptedMessage = "";
+        String returnedMessage = "";
 
 
         for(int i=0; i<tab.length; i++){
@@ -177,10 +188,20 @@ public class RailFence {
 
 
         for(int i=0; i<odszyfrowana.length; i++){
-            decryptedMessage= decryptedMessage + odszyfrowana[i];
+            returnedMessage= returnedMessage + odszyfrowana[i];
         }
 
-        return decryptedMessage;
+        return returnedMessage;
 
+    }
+
+    public String usunSpacje(String text){
+        String returnText = "";
+        for(int i=0;i<text.length();i++){
+            if(text.charAt(i) != ' '){
+                returnText+=text.charAt(i);
+            }
+        }
+        return returnText;
     }
 }
