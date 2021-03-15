@@ -277,7 +277,7 @@ public class FilesController {
         }else{
 
             FirstCryptoAlgorithms firstCryptoAlgorithms = new FirstCryptoAlgorithms();
-            firstCryptoAlgorithms.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
+            firstCryptoAlgorithms.encryption(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
 
             encryptionKey.clear();
             encryptionPath1.clear();
@@ -317,7 +317,7 @@ public class FilesController {
 
                 FirstCryptoAlgorithms firstCryptoAlgorithms = new FirstCryptoAlgorithms();
 
-                firstCryptoAlgorithms.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
+                firstCryptoAlgorithms.encryption(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
 
                 decryptionPath1.clear();
                 decryptionPath2.clear();

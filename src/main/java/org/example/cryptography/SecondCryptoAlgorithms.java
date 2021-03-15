@@ -27,17 +27,17 @@ public class SecondCryptoAlgorithms {
             String line = Files.readString(Paths.get(path));
             List<String> encrypted;
             if(zeroForEncryptionOneForDecryption == 0){
-                if(state == Files2Controller.STATE.FIRSTALGORITM){
+                if (state == Files2Controller.STATE.FIRSTALGORITM) {
                     //pierwszy algorytm szyfrowanie
                     encrypted = alg.encryption(lines , path3);
 
-                }else if(state == Files2Controller.STATE.SECONDALGORITM){
+                } else if(state == Files2Controller.STATE.SECONDALGORITM) {
                     //drugi algorytm szyfrowanie
                     encrypted = alg2.encryption(lines,path3);
-                }else{
+                } else {
                     encrypted = alg3.encryption(lines,path3);
                 }
-            }else{
+            } else {
                 if(state == Files2Controller.STATE.FIRSTALGORITM){
                     encrypted = alg.decryption(lines,path3);
                 }else if(state == Files2Controller.STATE.SECONDALGORITM){
@@ -63,35 +63,28 @@ public class SecondCryptoAlgorithms {
 
     public String encryptionText(String text, String text1, Text2Controller.STATE state) {
         String returedText;
-        if(state == Text2Controller.STATE.FIRSTALGORITM){
+        if(state == Text2Controller.STATE.FIRSTALGORITM) {
             returedText = alg.encryptionText(text,text1);
-        }else if(state == Text2Controller.STATE.SECONDALGORITM){
+        } else if(state == Text2Controller.STATE.SECONDALGORITM) {
             returedText = alg2.encryptionText(text,text1);
-        }else{
+        } else {
             returedText = alg3.encryptionText(text,text1);
         }
-
-
-
         return returedText;
     }
 
     public String decryptionText(String text, String text1, Text2Controller.STATE state) {
-        String returedText;
-        if(state == Text2Controller.STATE.FIRSTALGORITM){
-            returedText = alg.decryptionText(text,text1);
+        String returnedText;
+        if (state == Text2Controller.STATE.FIRSTALGORITM) {
+            returnedText = alg.decryptionText(text,text1);
 
-        }else if(state == Text2Controller.STATE.SECONDALGORITM){
-            returedText = alg2.decryptionText(text,text1);
+        } else if (state == Text2Controller.STATE.SECONDALGORITM) {
+            returnedText = alg2.decryptionText(text,text1);
 
-        }else{
-            returedText = alg3.decryptionText(text,text1);
-
+        } else{
+            returnedText = alg3.decryptionText(text,text1);
         }
-
-
-
-        return returedText;
+        return returnedText;
     }
 }
 

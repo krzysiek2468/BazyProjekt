@@ -72,7 +72,7 @@ public class FirstCryptoAlgorithms {
     }
     // te algorytmy można w oddzielnym pakiecie zrobić
 
-    public String encryptionText(String text, String text1, TextController.STATE state) {
+    public String encrytpionText(String text, String text1, TextController.STATE state) {
         String returedText;
         if(state == TextController.STATE.FIRSTALGORITM){
             returedText = alg.encryptionText(text,text1);
@@ -81,6 +81,8 @@ public class FirstCryptoAlgorithms {
         }else{
             returedText = alg3.encryptionText(text,text1);
         }
+
+
 
        return returedText;
     }

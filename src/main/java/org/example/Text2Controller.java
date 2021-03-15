@@ -165,7 +165,7 @@ public class Text2Controller {
             SecondCryptoAlgorithms algoritms = new SecondCryptoAlgorithms();
 
             try {
-                outputField.setText(algoritms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
+                outputField.setText(algoritms.encryptionText(toWriteField.getText(), toKeyWriteField.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }
