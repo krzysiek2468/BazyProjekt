@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="primaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Files3Controller">
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <top>
+                <HBox prefHeight="44.0" prefWidth="750.0" spacing="10.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="44.0" prefWidth="100.0" />
+                        <JFXButton fx:id="FB1" onAction="#switchLesson1" prefHeight="47.0" prefWidth="80.0" styleClass="button2" stylesheets="@../../style.css" text="Lesson1" />
+                        <JFXButton fx:id="FB2" onAction="#switchLesson2" prefHeight="47.0" prefWidth="80.0" styleClass="button3" stylesheets="@../../style.css" text="Lesson2" />
+                        <JFXButton fx:id="FB3" onAction="#switchLesson3" prefHeight="47.0" prefWidth="80.0" styleClass="button4" stylesheets="@../../style.css" text="Lesson3" />
+                        <JFXButton fx:id="FB4" onAction="#switchLesson4" prefHeight="47.0" prefWidth="80.0" styleClass="button5" stylesheets="@../../style.css" text="Lesson4" />
+                        <JFXButton fx:id="FB5" onAction="#switchLesson5" prefHeight="47.0" prefWidth="80.0" styleClass="button6" stylesheets="@../../style.css" text="Lesson5" />
+                        <JFXButton fx:id="FB6" onAction="#switchLesson6" prefHeight="47.0" prefWidth="80.0" styleClass="button7" stylesheets="@../../style.css" text="Lesson6" />
+                        <JFXButton fx:id="FB7" onAction="#switchLesson7" prefHeight="47.0" prefWidth="80.0" styleClass="button8" stylesheets="@../../style.css" text="Lesson7" />
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </HBox>
+            </top>
+            <left>
+                <VBox prefHeight="456.0" prefWidth="135.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label prefHeight="20.0" prefWidth="100.0" />
+                        <Label alignment="CENTER" prefHeight="54.0" prefWidth="119.0" text="LFSR" textAlignment="CENTER" textFill="#b83434">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="FT1" alignment="CENTER" onAction="#switchToAlg1Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="120.0" text="Synchronous &#10;Stream Cipher" textAlignment="CENTER" textFill="#b83434">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="FF2" alignment="CENTER" onAction="#switchToAlg2File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="FT2" onAction="#switchToAlg2Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                    </children>
+                </VBox>
+            </left>
+            <center>
+                <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="382.0" minHeight="10.0" prefHeight="326.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <FlowPane prefHeight="58.0" prefWidth="307.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="200.0" text="ENCRYPTION">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <FlowPane.margin>
+                                        <Insets left="50.0" top="15.0" />
+                                    </FlowPane.margin>
+                                </Label>
+                            </children>
+                        </FlowPane>
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DECRYPTION" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" top="5.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <JFXTextField fx:id="encryptionPath1" alignment="CENTER" prefHeight="28.0" prefWidth="208.0" promptText="first path" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="250.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath1Encryption" prefHeight="30.0" prefWidth="300.0" styleClass="button3" stylesheets="@../../style.css" text="FIRST FILE" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="150.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="encryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="50.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath2Encryption" prefHeight="30.0" prefWidth="300.0" styleClass="button2" stylesheets="@../../style.css" text="SECOND FILE" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="encryptionSubmit" onAction="#submitEncryption" prefHeight="30.0" prefWidth="300.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets bottom="20.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="decryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="250.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath1Decryption" prefHeight="30.0" prefWidth="300.0" styleClass="button3" stylesheets="@../../style.css" text="FIRST FILE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="150.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="decryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="50.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath2Decryption" prefHeight="30.0" prefWidth="300.0" styleClass="button2" stylesheets="@../../style.css" text="SECOND FILE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="decryptionSubmit" onAction="#submitDecryption" prefHeight="30.0" prefWidth="300.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets bottom="20.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="encryptionKey" alignment="CENTER" promptText="wielomian wejściowy" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="130.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="decryptionKey" alignment="CENTER" promptText="wielomian wejściowy" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="130.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                  <JFXTextField fx:id="encryptionKey1" alignment="CENTER" promptText="ziarno" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="220.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="decryptionKey1" alignment="CENTER" promptText="ziarno" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="50.0" right="50.0" top="220.0" />
+                     </GridPane.margin>
+                  </JFXTextField>
+                    </children>
+                </GridPane>
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>

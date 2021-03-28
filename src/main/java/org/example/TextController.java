@@ -110,8 +110,8 @@ public class TextController {
 
     }
     @FXML
-    public void switchLesson3(ActionEvent actionEvent) {
-
+    public void switchLesson3(ActionEvent actionEvent) throws IOException {
+        App.setRoot("Text3");
     }
     @FXML
     public void switchLesson4(ActionEvent actionEvent) {
