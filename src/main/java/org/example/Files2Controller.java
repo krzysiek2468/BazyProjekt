@@ -10,8 +10,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.algoritms.*;
-import org.example.cryptography.FirstCryptoAlgorytm;
-import org.example.cryptography.SecondCryptoAlgoritms;
+import org.example.cryptography.SecondCryptoAlgorithms;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,9 +18,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Files2Controller {
-
-
-
 
     @FXML
     public Button encryptionSubmit;
@@ -170,7 +166,6 @@ public class Files2Controller {
 //                new FileChooser.ExtensionFilter("IMAGE FILES", "*.jpg", "*.png", "*.gif")
         );
 
-
         File file = fileChooser.showOpenDialog(primaryPane.getScene().getWindow());
 
         if (file != null) {
@@ -195,7 +190,6 @@ public class Files2Controller {
 //                new FileChooser.ExtensionFilter("IMAGE FILES", "*.jpg", "*.png", "*.gif")
         );
 
-
         File file = fileChooser.showOpenDialog(primaryPane.getScene().getWindow());
 
         if (file != null) {
@@ -218,7 +212,6 @@ public class Files2Controller {
                 new FileChooser.ExtensionFilter("TEXT", "*.txt")
 //                new FileChooser.ExtensionFilter("IMAGE FILES", "*.jpg", "*.png", "*.gif")
         );
-
 
         File file = fileChooser.showOpenDialog(primaryPane.getScene().getWindow());
 
@@ -243,7 +236,6 @@ public class Files2Controller {
 //                new FileChooser.ExtensionFilter("IMAGE FILES", "*.jpg", "*.png", "*.gif")
         );
 
-
         File file = fileChooser.showOpenDialog(primaryPane.getScene().getWindow());
 
         if (file != null) {
@@ -260,73 +252,72 @@ public class Files2Controller {
     public void submitEncryption(ActionEvent actionEvent) {
         if (encryptionKey.getText().isEmpty() == true || encryptionPath1.getText().isEmpty() == true || encryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files or write key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(filePathCorect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true){
+        } else if(filePathCorect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files paths");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(checkKeyValidation(encryptionKey.getText()) == false){
+        } else if(checkKeyValidation(encryptionKey.getText()) == false) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else{
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+        } else {
+            SecondCryptoAlgorithms algorithms = new SecondCryptoAlgorithms();
 
-            algoritms.encrytpion(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
+            algorithms.encryption(encryptionPath1.getText() , encryptionPath2.getText() ,encryptionKey.getText() , 0 , state);
 
             encryptionKey.clear();
             encryptionPath1.clear();
             encryptionPath2.clear();
 
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }
-
     }
 
     @FXML
     public void submitDecryption(ActionEvent actionEvent) {
         if(decryptionKey.getText().isEmpty()==true || decryptionPath1.getText().isEmpty()==true || decryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files or write key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else if(filePathCorect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files paths");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
 
-        }else if(checkKeyValidation(decryptionKey.getText()) == false){
+        }else if(checkKeyValidation(decryptionKey.getText()) == false) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algoritms = new SecondCryptoAlgorithms();
 
-            algoritms.encrytpion(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
+            algoritms.encryption(decryptionPath1.getText() , decryptionPath2.getText() , decryptionKey.getText() , 1 , state);
 
             decryptionPath1.clear();
             decryptionPath2.clear();
             decryptionKey.clear();
 
             Stage stage = (Stage) primaryPane.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -360,8 +351,6 @@ public class Files2Controller {
             }
         }
         return exception;
-
-
     }
 
     public boolean checkKeyValidation(String text){
@@ -372,15 +361,9 @@ public class Files2Controller {
             SzyfrCezara alg2 = new SzyfrCezara();
             return  alg2.checkKey(text);
         }else{
-           SzyfrVigenerea alg3 = new SzyfrVigenerea();
+            SzyfrVigenerea alg3 = new SzyfrVigenerea();
             return alg3.checkKey(text);
         }
 
     }
-
-
-
-
-
-
 }

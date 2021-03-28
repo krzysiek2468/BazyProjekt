@@ -10,14 +10,10 @@ public class PrzestawienieMacierzowe2 {
         List<String> lista = new ArrayList<>();
         //path3 to klucz
 
-        for (String line :
-                lines) {
+        for (String line : lines) {
 
             lista.add(szyfruj(usunSpacje(line) , path3)) ;
-
-
         }
-
 
         return lista;
 
@@ -28,23 +24,17 @@ public class PrzestawienieMacierzowe2 {
         List<String> lista = new ArrayList<>();
         //path3 to klucz
 
-        for (String line :
-                lines) {
+        for (String line : lines) {
 
             lista.add(odszyfruj(usunSpacje(line) , path3)) ;
 
-
         }
-
 
         return lista;
 
     }
 
     public String encryptionText(String text , String path3){
-
-
-
 
         return szyfruj(usunSpacje(text) , path3);
 
@@ -63,7 +53,6 @@ public class PrzestawienieMacierzowe2 {
     }
 
     public String szyfruj(String text , String key){
-
 
         int pom=0;
 
@@ -101,8 +90,6 @@ public class PrzestawienieMacierzowe2 {
             }
         }
 
-
-
         for (int j=0; j<columns; j++) {
             int k = positions.get(j);
             for (int i = 0; i < poems; i++) {
@@ -114,16 +101,10 @@ public class PrzestawienieMacierzowe2 {
         }
         positions.clear();
 
-
-
-
-
         return  sB;
     }
 
     public String odszyfruj(String text, String key){
-
-
 
         String sB = "";
 
@@ -189,8 +170,6 @@ public class PrzestawienieMacierzowe2 {
 
         }
 
-
-
         for (int j=0; j<columns; j++) {
             int k = positions.get(j);
             for (int i = 0; i < poems; i++) {
@@ -202,10 +181,6 @@ public class PrzestawienieMacierzowe2 {
             sB+= " ";}
         }
         positions.clear();
-
-
-
-
 
         return  sB;
     }

@@ -1,6 +1,5 @@
 package org.example.algoritms;
 
-import java.net.StandardSocketOptions;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +7,9 @@ public class PrzestawienieMacierzowe1 {
 
     public List<String> encryption(List<String> lines , String path3){
         List<String> lista = new ArrayList<>();
-        for (String line :
-                lines) {
+        for (String line : lines) {
 
-            lista.add(szyfruj(usunSpacje(line) , prepereString(path3))) ;
-
+            lista.add(szyfruj(usunSpacje(line) , prepareString(path3))) ;
 
         }
         return lista;
@@ -25,8 +22,7 @@ public class PrzestawienieMacierzowe1 {
         for (String line :
                 lines) {
 
-            lista.add(odszyfruj(usunSpacje(line) , prepereString(path3))) ;
-
+            lista.add(odszyfruj(usunSpacje(line) , prepareString(path3))) ;
 
         }
         return lista;
@@ -39,7 +35,7 @@ public class PrzestawienieMacierzowe1 {
 
         //tutaj zakodowujemy lines
 
-        return szyfruj(usunSpacje(text) , prepereString(path3));
+        return szyfruj(usunSpacje(text) , prepareString(path3));
 
     }
 
@@ -88,7 +84,7 @@ public class PrzestawienieMacierzowe1 {
 
     }
 
-    public String prepereString(String key){
+    public String prepareString(String key){
         String keyy = "";
         for (int counter=0 ; counter<key.length();counter++){
             if(counter%2==0){
@@ -139,11 +135,6 @@ public class PrzestawienieMacierzowe1 {
 
         }
 
-
-
-
-
-
         String returnText = "";
         int position = 0;
         for(number1 = 0; number1<rows;number1++){
@@ -174,9 +165,6 @@ public class PrzestawienieMacierzowe1 {
         }
 
         int longs = key.length();
-
-
-
 
         char[][] tab = new char[rows][longs];
         int number1=0;
@@ -214,7 +202,6 @@ public class PrzestawienieMacierzowe1 {
 
             }
 
-
         }
 
         int m=0;
@@ -231,17 +218,7 @@ public class PrzestawienieMacierzowe1 {
 
             }
 
-
         }
-
-
-
-
-
-
-
-
-
 
         // odczzzytywanie z tablicy
         String returnText = "";
@@ -262,7 +239,6 @@ public class PrzestawienieMacierzowe1 {
 
 
             }
-
 
         }
 

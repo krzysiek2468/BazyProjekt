@@ -11,8 +11,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.algoritms.*;
-import org.example.cryptography.FirstCryptoAlgorytm;
-import org.example.cryptography.SecondCryptoAlgoritms;
+
 
 import java.io.IOException;
 

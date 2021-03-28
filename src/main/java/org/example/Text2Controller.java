@@ -9,8 +9,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.algoritms.*;
-import org.example.cryptography.FirstCryptoAlgorytm;
-import org.example.cryptography.SecondCryptoAlgoritms;
+import org.example.cryptography.SecondCryptoAlgorithms;
 
 import java.io.IOException;
 
@@ -18,8 +17,6 @@ public class Text2Controller {
 
     //BUTTONS FROM SIDE MENU
     // TF - TEXT FIELD MODE BUTTON TO SWITCH TO FILE MODE
-
-
 
     @FXML
     public Button submit;
@@ -153,22 +150,22 @@ public class Text2Controller {
     public void submit(ActionEvent actionEvent) {
         if(toWriteField.getText().isEmpty()==true || toKeyWriteField.getText().isEmpty()==true ) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text, or key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else if(checkKeyValidation(toKeyWriteField.getText()) == false){
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algorithms = new SecondCryptoAlgorithms();
 
             try {
-                outputField.setText(algoritms.encrytpionText(toWriteField.getText(), toKeyWriteField.getText() , state));
+                outputField.setText(algorithms.encryptionText(toWriteField.getText(), toKeyWriteField.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -177,7 +174,7 @@ public class Text2Controller {
             toKeyWriteField.clear();
 
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -187,22 +184,22 @@ public class Text2Controller {
     public void submit1(ActionEvent actionEvent) {
         if(toWriteField1.getText().isEmpty()==true || toKeyWriteField1.getText().isEmpty()==true ) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text, or key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else if(checkKeyValidation(toKeyWriteField1.getText()) == false){
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else{
 
-            SecondCryptoAlgoritms algoritms = new SecondCryptoAlgoritms();
+            SecondCryptoAlgorithms algorithms = new SecondCryptoAlgorithms();
 
             try {
-                outputField1.setText(algoritms.decrytpionText(toWriteField1.getText(), toKeyWriteField1.getText() , state));
+                outputField1.setText(algorithms.decryptionText(toWriteField1.getText(), toKeyWriteField1.getText() , state));
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -211,7 +208,7 @@ public class Text2Controller {
             toKeyWriteField1.clear();
 
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -231,6 +228,5 @@ public class Text2Controller {
         }
 
     }
-
 
 }
