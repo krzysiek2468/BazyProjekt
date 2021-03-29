@@ -40,31 +40,34 @@ public class LFSR {
 
     public void algoritm( String text, String text1, TextArea algoritmOutput, Text3Controller.STATE state) throws InterruptedException {
 
-
-
         List<String> lines = new ArrayList<>();
         lines.add(text);
 
+
                 Thread thread = new Thread(() -> {
 
-            while(true){
+
+
+            while(Text3Controller.state != Text3Controller.STATE.STOPT){
                     algoritmOutput.setText(algoritmOutput.getText() +"\n" + lines.get(lines.size()-1));
                     lines.add(code(lines.get(lines.size()-1), text1));
 
 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if(state == Text3Controller.STATE.STOPT){
-                    break;
-                }
+
             }
+                    algoritmOutput.clear();
+
 
         });
 
         thread.start();
+
+
 
 
 
