@@ -18,10 +18,8 @@ import java.util.Timer;
 
 public class Text3Controller {
 
-
-
     @FXML
-    public TextArea algoritmOutput;
+    public TextArea algorithmOutput;
 
     @FXML
     public TextField toKeyWriteField;
@@ -35,10 +33,10 @@ public class Text3Controller {
     public static enum STATE
     {
         WORKING,
-        STOPT
+        STOP
     }
 
-    public static STATE state = STATE.STOPT;
+    public static STATE state = STATE.STOP;
 
     @FXML
     public void switchLesson1(ActionEvent actionEvent) throws IOException {
@@ -86,36 +84,28 @@ public class Text3Controller {
 
         if (state == STATE.WORKING) {
 
-            state = STATE.STOPT;
+            state = STATE.STOP;
 
 
         } else {
 
-            LFSR algoritm = new LFSR();
+            LFSR algorithm = new LFSR();
             if (toKeyWriteField.getText().isEmpty() == true || toKeyWriteField1.getText().isEmpty() == true) {
                 Stage stage = (Stage) primaryText.getScene().getWindow();
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
                 alert.initModality(Modality.APPLICATION_MODAL);
                 alert.initOwner(stage);
                 alert.showAndWait();
-            } else if (algoritm.checkKeys(toKeyWriteField.getText(), toKeyWriteField1.getText()) == false) {
+            } else if (algorithm.checkKeys(toKeyWriteField.getText(), toKeyWriteField1.getText()) == false) {
                 Stage stage = (Stage) primaryText.getScene().getWindow();
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
                 alert.initModality(Modality.APPLICATION_MODAL);
                 alert.initOwner(stage);
                 alert.showAndWait();
             } else {
-
-
                 state = STATE.WORKING;
-                algoritm.algoritm(toKeyWriteField.getText(), toKeyWriteField1.getText(), algoritmOutput, state);
-
-
+                algorithm.algorithm(toKeyWriteField.getText(), toKeyWriteField1.getText(), algorithmOutput, state);
             }
-
         }
     }
-
-
-
 }
