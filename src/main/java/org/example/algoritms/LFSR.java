@@ -37,29 +37,29 @@ public class LFSR {
     }
     public boolean checkKeys(String wielomian, String ziarno) {
         int counter = 0;
-       if(wielomian.length() == ziarno.length() )
-       {
-           for(int i=0;i<ziarno.length();i++){
-               if(wielomian.charAt(i) != '1' && wielomian.charAt(i) != '0' && ziarno.charAt(i)!='1' && ziarno.charAt(i)!='0'){
-                   return false;
-               }
-               else if(ziarno.charAt(i) == '1'){
-                   counter++;
-               }
-               else {
+        if(wielomian.length() == ziarno.length() )
+        {
+            for(int i=0;i<ziarno.length();i++){
+                if(wielomian.charAt(i) != '1' && wielomian.charAt(i) != '0' && ziarno.charAt(i)!='1' && ziarno.charAt(i)!='0'){
+                    return false;
+                }
+                else if(ziarno.charAt(i) == '1'){
+                    counter++;
+                }
+                else {
 
-               }
-           }
-           if (counter<2) {
-               return false;
-           }
-           else {
-               return true;
-           }
-       }
-       else{
-           return false;
-       }
+                }
+            }
+            if (counter<2) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        else{
+            return false;
+        }
     }
 
     public void algorithm (String text, String text1, TextArea algorithmOutput, Text3Controller.STATE state) throws InterruptedException {
@@ -82,6 +82,15 @@ public class LFSR {
             algorithmOutput.clear();
         });
         thread.start();
+    }
+
+    public String algoritm2(String text, String text1){
+        w = new int[text.length()];
+        z = new int[text1.length()];
+        converse2(z, text1);
+        positionList.clear();
+        position(z, positionList, text1.length());
+        return code(text);
     }
 
     public String code(String text) {

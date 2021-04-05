@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane fx:id="primaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FilesController">
+<StackPane fx:id="primaryPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.FilesController">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0">
             <top>
@@ -44,108 +44,108 @@
                         </Label>
                         <JFXButton fx:id="FF2" alignment="CENTER" onAction="#switchToAlg2File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
                         <JFXButton fx:id="FT2" onAction="#switchToAlg2Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
-                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="120.0" text="PRZESTAWIENIA&#10;MACIERZOWE&#10;PRZYKŁAD 2.&#10;" textAlignment="CENTER" textFill="#b83434">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <JFXButton fx:id="FF3" alignment="CENTER" onAction="#switchToAlg3File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
-                  <JFXButton fx:id="FT3" onAction="#switchToAlg3Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="120.0" text="PRZESTAWIENIA&#10;MACIERZOWE&#10;PRZYKŁAD 2.&#10;" textAlignment="CENTER" textFill="#b83434">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="FF3" alignment="CENTER" onAction="#switchToAlg3File" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="FILES" />
+                        <JFXButton fx:id="FT3" onAction="#switchToAlg3Text" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="TEXT" />
                     </children>
                 </VBox>
             </left>
-         <center>
-            <GridPane BorderPane.alignment="CENTER">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="244.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <FlowPane prefHeight="72.0" prefWidth="321.0">
-                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="172.0" text="ENCRYPTION">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <FlowPane.margin>
-                              <Insets left="50.0" top="60.0" />
-                           </FlowPane.margin>
+            <center>
+                <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="244.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <FlowPane prefHeight="72.0" prefWidth="321.0">
+                            <children>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="172.0" text="ENCRYPTION">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <FlowPane.margin>
+                                        <Insets left="50.0" top="60.0" />
+                                    </FlowPane.margin>
+                                </Label>
+                            </children>
+                        </FlowPane>
+                        <Label alignment="CENTER" prefHeight="22.0" prefWidth="172.0" text="DECRYPTION" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" />
+                            </GridPane.margin>
                         </Label>
-                     </children>
-                  </FlowPane>
-                  <Label alignment="CENTER" prefHeight="22.0" prefWidth="172.0" text="DECRYPTION" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <JFXTextField fx:id="encryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="200.0" left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXTextField>
-                  <JFXButton onAction="#getPath1Encryption" prefHeight="30.0" prefWidth="300.0" styleClass="button3" stylesheets="@../../style.css" text="FIRST FILE" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="100.0" left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXButton>
-                  <JFXTextField fx:id="encryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXTextField>
-                  <JFXButton onAction="#getPath2Encryption" prefHeight="30.0" prefWidth="300.0" styleClass="button2" stylesheets="@../../style.css" text="SECOND FILE" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" top="100.0" />
-                     </GridPane.margin>
-                  </JFXButton>
-                  <JFXButton fx:id="encryptionSubmit" onAction="#submitEncryption" prefHeight="30.0" prefWidth="300.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXButton>
-                  <JFXTextField fx:id="decryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="200.0" left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXTextField>
-                  <JFXButton onAction="#getPath1Decryption" prefHeight="30.0" prefWidth="300.0" styleClass="button3" stylesheets="@../../style.css" text="FIRST FILE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets bottom="100.0" left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXButton>
-                  <JFXTextField fx:id="decryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXTextField>
-                  <JFXButton onAction="#getPath2Decryption" prefHeight="30.0" prefWidth="300.0" styleClass="button2" stylesheets="@../../style.css" text="SECOND FILE" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" top="100.0" />
-                     </GridPane.margin>
-                  </JFXButton>
-                  <JFXButton fx:id="decryptionSubmit" onAction="#submitDecryption" prefHeight="30.0" prefWidth="300.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </GridPane.margin>
-                  </JFXButton>
-                  <JFXTextField fx:id="encryptionKey" alignment="CENTER" promptText="key" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" top="180.0" />
-                     </GridPane.margin>
-                  </JFXTextField>
-                  <JFXTextField fx:id="decryptionKey" alignment="CENTER" promptText="key" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="50.0" right="50.0" top="180.0" />
-                     </GridPane.margin>
-                  </JFXTextField>
-               </children>
-            </GridPane>
-         </center>
+                        <JFXTextField fx:id="encryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="200.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath1Encryption" prefHeight="30.0" prefWidth="300.0" styleClass="button3" stylesheets="@../../style.css" text="FIRST FILE" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="100.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="encryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath2Encryption" prefHeight="30.0" prefWidth="300.0" styleClass="button2" stylesheets="@../../style.css" text="SECOND FILE" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="100.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="encryptionSubmit" onAction="#submitEncryption" prefHeight="30.0" prefWidth="300.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="decryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="200.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath1Decryption" prefHeight="30.0" prefWidth="300.0" styleClass="button3" stylesheets="@../../style.css" text="FIRST FILE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets bottom="100.0" left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="decryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXButton onAction="#getPath2Decryption" prefHeight="30.0" prefWidth="300.0" styleClass="button2" stylesheets="@../../style.css" text="SECOND FILE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="100.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="decryptionSubmit" onAction="#submitDecryption" prefHeight="30.0" prefWidth="300.0" styleClass="button1" stylesheets="@../../style.css" text="SUBMIT" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" />
+                            </GridPane.margin>
+                        </JFXButton>
+                        <JFXTextField fx:id="encryptionKey" alignment="CENTER" promptText="key" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="180.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="decryptionKey" alignment="CENTER" promptText="key" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="50.0" right="50.0" top="180.0" />
+                            </GridPane.margin>
+                        </JFXTextField>
+                    </children>
+                </GridPane>
+            </center>
         </BorderPane>
     </children>
 </StackPane>
