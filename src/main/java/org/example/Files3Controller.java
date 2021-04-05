@@ -141,7 +141,7 @@ public class Files3Controller {
         }
     }
 
-    public void submitEncryption(ActionEvent actionEvent) {
+    public void submitEncryption(ActionEvent actionEvent) throws IOException {
         SteamCipher algoritm = new SteamCipher();
         if (encryptionKey.getText().isEmpty() == true || encryptionKey1.getText().isEmpty() == true || encryptionPath1.getText().isEmpty() == true || encryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
@@ -222,7 +222,7 @@ public class Files3Controller {
         }
     }
 
-    public void submitDecryption(ActionEvent actionEvent) {
+    public void submitDecryption(ActionEvent actionEvent) throws IOException {
         SteamCipher algoritm = new SteamCipher();
         if(decryptionKey.getText().isEmpty()==true || decryptionKey1.getText().isEmpty()==true || decryptionPath1.getText().isEmpty()==true || decryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();

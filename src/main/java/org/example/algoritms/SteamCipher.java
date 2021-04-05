@@ -1,6 +1,13 @@
 package org.example.algoritms;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SteamCipher {
 
 
@@ -80,18 +87,52 @@ public class SteamCipher {
     }
 
     public String encode(String text, String text1, String text2){
-        return "ss";
-    }// text ziarno wielomian
+        return  algoritm(text ,text1 ,text2);
+    }
+
+
+
+
+
 
     public String decode(String text, String text1, String text2){
-        return "ss";
+        return  algoritm(text ,text1 ,text2);
+    }
+
+    // text wielomian // text1 ziarno // text2 do odczytu text3 do zapisu
+    public void encodeFile(String text, String text1, String text2, String text3) throws IOException {
+        List<String> lines = Files.readAllLines(Paths.get(text1));
+        List<String> lista = new ArrayList<>();
+        for (String line : lines) {
+
+            lista.add(algoritm(line , text1, text)) ;
+
+        }
+
+        FileWriter writer = new FileWriter(text2);
+        for(String str: lista) {
+            writer.write(str + System.lineSeparator());
+        }
+        writer.close();
     }
 
 
-    public void encodeFile(String text, String text1, String text2, String text3) { System.out.println("DDDDDD");
-    } //ścieżka
 
-    public void decodeFile(String text, String text1, String text2, String text3) {
-        System.out.println("EEEEEE");
+    public void decodeFile(String text, String text1, String text2, String text3) throws IOException {
+
+        List<String> lines = Files.readAllLines(Paths.get(text1));
+        List<String> lista = new ArrayList<>();
+        for (String line : lines) {
+
+            lista.add(algoritm(line , text1, text)) ;
+
+        }
+
+        FileWriter writer = new FileWriter(text2);
+        for(String str: lista) {
+            writer.write(str + System.lineSeparator());
+        }
+        writer.close();
     }
 }
+
