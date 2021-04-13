@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="primaryText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Text4Controller">
+       <BorderPane prefHeight="200.0" prefWidth="200.0">
+           <top>
+               <HBox prefHeight="44.0" prefWidth="750.0" spacing="10.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                   <children>
+                       <JFXButton fx:id="FB1" onAction="#switchLesson1" prefHeight="35.0" prefWidth="175.0" styleClass="button2" stylesheets="@../../style.css" text="Lesson1" />
+                       <JFXButton fx:id="FB2" onAction="#switchLesson2" prefHeight="35.0" prefWidth="175.0" styleClass="button3" stylesheets="@../../style.css" text="Lesson2" />
+                       <JFXButton fx:id="FB3" onAction="#switchLesson3" prefHeight="35.0" prefWidth="175.0" styleClass="button4" stylesheets="@../../style.css" text="Lesson3" />
+                       <JFXButton fx:id="FB4" onAction="#switchLesson4" prefHeight="35.0" prefWidth="175.0" styleClass="button5" stylesheets="@../../style.css" text="Lesson4" />
+                   </children>
+               </HBox>
+           </top>
+         <left>
+             <VBox prefHeight="456.0" prefWidth="135.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
+                 <children>
+                     <Label alignment="CENTER" prefHeight="54.0" prefWidth="119.0" text="DES Algorithm" textAlignment="CENTER" textFill="#b83434">
+                         <font>
+                             <Font name="System Bold" size="12.0" />
+                         </font>
+                     </Label>
+                     <JFXButton fx:id="FT1" alignment="CENTER" onAction="#switchToAlgText" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="TEXT" />
+                     <JFXButton fx:id="FF1" alignment="CENTER" onAction="#switchToAlgFiles" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="FILES" />
+                 </children>
+             </VBox>
+         </left>
+      <center>
+         <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+               <Label alignment="CENTER" layoutX="117.0" layoutY="5.0" prefHeight="30.0" prefWidth="372.0" text="ENCRYPTION" />
+               <JFXTextField fx:id="toWriteTextEncryption" layoutX="32.0" layoutY="65.0" prefHeight="30.0" prefWidth="550.0" promptText="Tekst jawny" />
+               <JFXButton fx:id="encryptionButton" alignment="CENTER" layoutX="242.0" layoutY="204.0"  prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
+               <JFXTextArea fx:id="encryptionResult" layoutX="32.0" layoutY="124.0" prefHeight="30.0" prefWidth="550.0" />
+               <Label alignment="CENTER" layoutX="122.0" layoutY="269.0" prefHeight="30.0" prefWidth="372.0" text="DECRYPTION" textAlignment="CENTER" />
+               <JFXTextField fx:id="toWriteTextDecryption" layoutX="32.0" layoutY="331.0" prefHeight="30.0" prefWidth="550.0" promptText="Tekst zaszyfrowany" />
+               <JFXTextArea fx:id="decryptionResult" layoutX="33.0" layoutY="393.0" prefHeight="30.0" prefWidth="550.0" />
+               <JFXButton fx:id="decryptionButton" layoutX="242.0" layoutY="484.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
+            </children>
+         </Pane>
+      </center></BorderPane>
+</StackPane>
