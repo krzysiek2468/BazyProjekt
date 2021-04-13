@@ -1,5 +1,6 @@
 package org.example;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -9,6 +10,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.example.algoritms.SteamCipher;
+import org.example.cryptography.SecondCryptoAlgorithms;
+import org.example.cryptography.ThirdAlgoritms;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,36 +56,47 @@ public class Files3Controller {
     public StackPane primaryPane;
 
     @FXML
-    public void switchLesson1() throws IOException {
+    public void switchLesson1(ActionEvent actionEvent) throws IOException {
         App.setRoot("Files");
 
     }
     @FXML
-    public void switchLesson2() throws IOException {
+    public void switchLesson2(ActionEvent actionEvent) throws IOException {
         App.setRoot("Files2");
     }
     @FXML
-    public void switchLesson3() throws IOException {
-        App.setRoot("Files3");
+    public void switchLesson3(ActionEvent actionEvent){
+
     }
     @FXML
-    public void switchLesson4() throws IOException {
-        App.setRoot("Files4");
+    public void switchLesson4(ActionEvent actionEvent) {
+
+    }
+    @FXML
+    public void switchLesson5(ActionEvent actionEvent) {
+
+    }
+    @FXML
+    public void switchLesson6(ActionEvent actionEvent) {
+
+    }
+    @FXML
+    public void switchLesson7(ActionEvent actionEvent) {
+
     }
 
-    public void switchToAlg2File() throws IOException {
-        App.setRoot("Files3");
+    public void switchToAlg2File(ActionEvent actionEvent) {
     }
 
-    public void switchToAlg2Text() throws IOException {
+    public void switchToAlg2Text(ActionEvent actionEvent) throws IOException {
         App.setRoot("Text3b");
     }
 
-    public void switchToAlg1Text() throws IOException {
+    public void switchToAlg1Text(ActionEvent actionEvent) throws IOException {
         App.setRoot("Text3");
     }
 
-    public void getPath1Encryption() {
+    public void getPath1Encryption(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -104,7 +118,7 @@ public class Files3Controller {
         }
     }
 
-    public void getPath2Encryption() {
+    public void getPath2Encryption(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -127,7 +141,7 @@ public class Files3Controller {
         }
     }
 
-    public void submitEncryption() {
+    public void submitEncryption(ActionEvent actionEvent) throws IOException {
         SteamCipher algoritm = new SteamCipher();
         if (encryptionKey.getText().isEmpty() == true || encryptionKey1.getText().isEmpty() == true || encryptionPath1.getText().isEmpty() == true || encryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
@@ -164,7 +178,7 @@ public class Files3Controller {
 
     }
 
-    public void getPath1Decryption() {
+    public void getPath1Decryption(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -186,7 +200,7 @@ public class Files3Controller {
         }
     }
 
-    public void getPath2Decryption() {
+    public void getPath2Decryption(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -208,7 +222,7 @@ public class Files3Controller {
         }
     }
 
-    public void submitDecryption() {
+    public void submitDecryption(ActionEvent actionEvent) throws IOException {
         SteamCipher algoritm = new SteamCipher();
         if(decryptionKey.getText().isEmpty()==true || decryptionKey1.getText().isEmpty()==true || decryptionPath1.getText().isEmpty()==true || decryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
