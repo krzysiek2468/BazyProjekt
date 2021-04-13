@@ -64,7 +64,7 @@ public class FilesController {
     // changing algoritm in lesson
 
     @FXML
-    public void switchToAlg1File(ActionEvent actionEvent) {
+    public void switchToAlg1File() {
         if(state != STATE.FIRSTALGORITM){
             clearFields();
             state = STATE.FIRSTALGORITM;
@@ -73,7 +73,7 @@ public class FilesController {
     }
 
     @FXML
-    public void switchToAlg2File(ActionEvent actionEvent) {
+    public void switchToAlg2File() {
         if(state != STATE.SECONDALGORITM){
             clearFields();
             state = STATE.SECONDALGORITM;
@@ -82,7 +82,7 @@ public class FilesController {
     }
 
     @FXML
-    public void switchToAlg3File(ActionEvent actionEvent) {
+    public void switchToAlg3File() {
         if(state != STATE.THIRDALGORITM){
             clearFields();
             state = STATE.THIRDALGORITM;
@@ -91,21 +91,21 @@ public class FilesController {
     }
 
     @FXML
-    public void switchToAlg1Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg1Text() throws IOException {
         clearFields();
         TextController.state = TextController.STATE.FIRSTALGORITM;
         App.setRoot("Text");
     }
 
     @FXML
-    public void switchToAlg2Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg2Text() throws IOException {
         clearFields();
         TextController.state = TextController.STATE.SECONDALGORITM;
         App.setRoot("Text");
     }
 
     @FXML
-    public void switchToAlg3Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg3Text() throws IOException {
         clearFields();
         TextController.state = TextController.STATE.THIRDALGORITM;
         App.setRoot("Text");
@@ -125,39 +125,27 @@ public class FilesController {
     //empty for now
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) {
+    public void switchLesson1() {
 
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent) throws IOException {
+    public void switchLesson2() throws IOException {
         App.setRoot("Files2");
 
     }
     @FXML
-    public void switchLesson3(ActionEvent actionEvent) throws IOException {
+    public void switchLesson3() throws IOException {
         App.setRoot("Files3");
     }
     @FXML
-    public void switchLesson4(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson5(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson6(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson7(ActionEvent actionEvent) {
-
+    public void switchLesson4() throws IOException {
+        App.setRoot("Files4");
     }
 
     // choosing file
     // trochę powtarzania kodu , nie wiem czy nie zmienić
     @FXML
-    public void getPath1Encryption(ActionEvent actionEvent) {
+    public void getPath1Encryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -182,7 +170,7 @@ public class FilesController {
     }
 
     @FXML
-    public void getPath2Encryption(ActionEvent actionEvent) {
+    public void getPath2Encryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -206,7 +194,7 @@ public class FilesController {
     }
 
     @FXML
-    public void getPath1Decryption(ActionEvent actionEvent) {
+    public void getPath1Decryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -230,7 +218,7 @@ public class FilesController {
     }
 
     @FXML
-    public void getPath2Decryption(ActionEvent actionEvent) {
+    public void getPath2Decryption() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Upload File Path");
         fileChooser.getExtensionFilters().addAll(
@@ -255,7 +243,7 @@ public class FilesController {
 
 
     @FXML
-    public void submitEncryption(ActionEvent actionEvent) {
+    public void submitEncryption() {
         if (encryptionKey.getText().isEmpty() == true || encryptionPath1.getText().isEmpty() == true || encryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files, or write key");
@@ -293,7 +281,7 @@ public class FilesController {
     }
 
     @FXML
-    public void submitDecryption(ActionEvent actionEvent) {
+    public void submitDecryption() {
         if(decryptionKey.getText().isEmpty()==true || decryptionPath1.getText().isEmpty()==true || decryptionPath2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Choose your files or write key");

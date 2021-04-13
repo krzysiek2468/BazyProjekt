@@ -57,18 +57,7 @@ public class Text3bController {
     public void switchLesson4(ActionEvent actionEvent) {
 
     }
-    @FXML
-    public void switchLesson5(ActionEvent actionEvent) {
 
-    }
-    @FXML
-    public void switchLesson6(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson7(ActionEvent actionEvent) {
-
-    }
 
     public void switchToAlg1Text(ActionEvent actionEvent) throws IOException {
         App.setRoot("Text3");

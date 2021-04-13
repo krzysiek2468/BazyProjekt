@@ -84,7 +84,7 @@ public class LFSR {
         thread.start();
     }
 
-    public String algoritm2(String text, String text1){
+    public String algorithm2(String text, String text1){
         w = new int[text.length()];
         z = new int[text1.length()];
         converse2(z, text1);

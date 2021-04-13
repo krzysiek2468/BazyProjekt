@@ -136,20 +136,8 @@ public class Files2Controller {
         App.setRoot("Files3");
     }
     @FXML
-    public void switchLesson4(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson5(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson6(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson7(ActionEvent actionEvent) {
-
+    public void switchLesson4(ActionEvent actionEvent) throws IOException {
+        App.setRoot("Files4");
     }
 
     // choosing file

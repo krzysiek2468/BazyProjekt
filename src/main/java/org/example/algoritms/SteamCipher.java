@@ -71,7 +71,7 @@ public class SteamCipher {
         zwracanaTablica += xor( Integer.parseInt(String.valueOf(kod.charAt(0))),Integer.parseInt(String.valueOf(bytesText.charAt(0)))) ;
 
         for(int i=1;i<bytesText.length();i++) {
-            kod = algorytm.algoritm2(kod, text1);
+            kod = algorytm.algorithm2(kod, text1);
             int result =xor( Integer.parseInt(String.valueOf(kod.charAt(0))),Integer.parseInt(String.valueOf(bytesText.charAt(i)))) ;
             zwracanaTablica += result;
         }

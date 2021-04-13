@@ -12,14 +12,10 @@
             <top>
                 <HBox prefHeight="44.0" prefWidth="750.0" spacing="10.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
                     <children>
-                        <Label prefHeight="44.0" prefWidth="100.0" />
-                        <JFXButton fx:id="FB1" onAction="#switchLesson1" prefHeight="47.0" prefWidth="80.0" styleClass="button2" stylesheets="@../../style.css" text="Lesson1" />
-                        <JFXButton fx:id="FB2" onAction="#switchLesson2" prefHeight="47.0" prefWidth="80.0" styleClass="button3" stylesheets="@../../style.css" text="Lesson2" />
-                        <JFXButton fx:id="FB3" onAction="#switchLesson3" prefHeight="47.0" prefWidth="80.0" styleClass="button4" stylesheets="@../../style.css" text="Lesson3" />
-                        <JFXButton fx:id="FB4" onAction="#switchLesson4" prefHeight="47.0" prefWidth="80.0" styleClass="button5" stylesheets="@../../style.css" text="Lesson4" />
-                        <JFXButton fx:id="FB5" onAction="#switchLesson5" prefHeight="47.0" prefWidth="80.0" styleClass="button6" stylesheets="@../../style.css" text="Lesson5" />
-                        <JFXButton fx:id="FB6" onAction="#switchLesson6" prefHeight="47.0" prefWidth="80.0" styleClass="button7" stylesheets="@../../style.css" text="Lesson6" />
-                        <JFXButton fx:id="FB7" onAction="#switchLesson7" prefHeight="47.0" prefWidth="80.0" styleClass="button8" stylesheets="@../../style.css" text="Lesson7" />
+                        <JFXButton fx:id="FB1" onAction="#switchLesson1" prefHeight="35.0" prefWidth="175.0" styleClass="button2" stylesheets="@../../style.css" text="Lesson1" />
+                        <JFXButton fx:id="FB2" onAction="#switchLesson2" prefHeight="35.0" prefWidth="175.0" styleClass="button3" stylesheets="@../../style.css" text="Lesson2" />
+                        <JFXButton fx:id="FB3" onAction="#switchLesson3" prefHeight="35.0" prefWidth="175.0" styleClass="button4" stylesheets="@../../style.css" text="Lesson3" />
+                        <JFXButton fx:id="FB4" onAction="#switchLesson4" prefHeight="35.0" prefWidth="175.0" styleClass="button5" stylesheets="@../../style.css" text="Lesson4" />
                     </children>
                     <opaqueInsets>
                         <Insets />
@@ -29,7 +25,6 @@
             <left>
                 <VBox prefHeight="456.0" prefWidth="135.0" styleClass="menu" stylesheets="@../../style.css" BorderPane.alignment="CENTER">
                     <children>
-                        <Label prefHeight="20.0" prefWidth="100.0" />
                         <Label alignment="CENTER" prefHeight="54.0" prefWidth="119.0" text="PRZESTAWIENIA&#10;MACIERZOWE&#10;PRZYKŁAD 3." textAlignment="CENTER" textFill="#b83434">
                             <font>
                                 <Font name="System Bold" size="12.0" />
@@ -149,4 +144,3 @@
         </BorderPane>
     </children>
 </StackPane>
-

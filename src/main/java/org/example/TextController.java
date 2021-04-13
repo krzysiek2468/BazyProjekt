@@ -117,18 +117,6 @@ public class TextController {
     public void switchLesson4(ActionEvent actionEvent) {
 
     }
-    @FXML
-    public void switchLesson5(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson6(ActionEvent actionEvent) {
-
-    }
-    @FXML
-    public void switchLesson7(ActionEvent actionEvent) {
-
-    }
 
     @FXML
     public void submit(ActionEvent actionEvent) {
