@@ -35,12 +35,12 @@
             <children>
                <Label alignment="CENTER" layoutX="117.0" layoutY="5.0" prefHeight="30.0" prefWidth="372.0" text="ENCRYPTION" />
                <JFXTextField fx:id="toWriteTextEncryption" layoutX="32.0" layoutY="65.0" prefHeight="30.0" prefWidth="550.0" promptText="Tekst jawny" />
-               <JFXButton fx:id="encryptionButton" alignment="CENTER" layoutX="242.0" layoutY="204.0" prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
+               <JFXButton fx:id="encryptionButton" alignment="CENTER" layoutX="242.0" layoutY="204.0" onAction="#submitEncryption" prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
                <JFXTextArea fx:id="encryptionResult" layoutX="32.0" layoutY="124.0" prefHeight="30.0" prefWidth="550.0" />
                <Label alignment="CENTER" layoutX="122.0" layoutY="269.0" prefHeight="30.0" prefWidth="372.0" text="DECRYPTION" textAlignment="CENTER" />
                <JFXTextField fx:id="toWriteTextDecryption" layoutX="32.0" layoutY="331.0" prefHeight="30.0" prefWidth="550.0" promptText="Tekst zaszyfrowany" />
                <JFXTextArea fx:id="decryptionResult" layoutX="33.0" layoutY="393.0" prefHeight="30.0" prefWidth="550.0" />
-               <JFXButton fx:id="decryptionButton" layoutX="242.0" layoutY="484.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
+               <JFXButton fx:id="decryptionButton" layoutX="242.0" layoutY="484.0" mnemonicParsing="false" onAction="#submitDecryption" prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
             </children>
          </Pane>
       </center></BorderPane>

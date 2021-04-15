@@ -78,7 +78,7 @@
                                 <Insets left="50.0" top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <JFXTextField fx:id="encryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.rowIndex="1">
+                        <JFXTextField fx:id="encryptionPath1" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets bottom="200.0" left="50.0" right="50.0" />
                             </GridPane.margin>
@@ -88,7 +88,7 @@
                                 <Insets bottom="100.0" left="50.0" right="50.0" />
                             </GridPane.margin>
                         </JFXButton>
-                        <JFXTextField fx:id="encryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.rowIndex="1">
+                        <JFXTextField fx:id="encryptionPath2" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets left="50.0" right="50.0" />
                             </GridPane.margin>
@@ -103,7 +103,7 @@
                                 <Insets left="50.0" right="50.0" />
                             </GridPane.margin>
                         </JFXButton>
-                        <JFXTextField fx:id="decryptionPath1" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <JFXTextField fx:id="decryptionPath1" prefHeight="30.0" prefWidth="300.0" promptText="first path" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets bottom="200.0" left="50.0" right="50.0" />
                             </GridPane.margin>
@@ -113,7 +113,7 @@
                                 <Insets bottom="100.0" left="50.0" right="50.0" />
                             </GridPane.margin>
                         </JFXButton>
-                        <JFXTextField fx:id="decryptionPath2" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <JFXTextField fx:id="decryptionPath2" prefHeight="30.0" prefWidth="300.0" promptText="second path" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <GridPane.margin>
                                 <Insets left="50.0" right="50.0" />
                             </GridPane.margin>
