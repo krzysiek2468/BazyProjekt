@@ -35,20 +35,20 @@ public class FirstCryptoAlgorithms {
             String line = Files.readString(Paths.get(path));
             List<String> encrypted;
             if(zeroForEncryptionOneForDecryption == 0){
-                if(state == FilesController.STATE.FIRSTALGORITM){
+                if(state == FilesController.STATE.FIRSTALGORITHM){
                     //pierwszy algorytm szyfrowanie
                      encrypted = alg.encryption(lines , path3);
 
-                }else if(state == FilesController.STATE.SECONDALGORITM){
+                }else if(state == FilesController.STATE.SECONDALGORITHM){
                     //drugi algorytm szyfrowanie
                      encrypted = alg2.encryption(lines,path3);
                 }else{
                      encrypted = alg3.encryption(lines,path3);
                 }
             }else{
-                if(state == FilesController.STATE.FIRSTALGORITM){
+                if(state == FilesController.STATE.FIRSTALGORITHM){
                     encrypted = alg.decryption(lines,path3);
-                }else if(state == FilesController.STATE.SECONDALGORITM){
+                }else if(state == FilesController.STATE.SECONDALGORITHM){
                     encrypted = alg2.decryption(lines,path3);
                 }else{
                     encrypted = alg3.decryption(lines,path3);
@@ -73,17 +73,17 @@ public class FirstCryptoAlgorithms {
     // te algorytmy można w oddzielnym pakiecie zrobić
 
     public String encrytpionText(String text, String text1, TextController.STATE state) {
-        String returedText;
-        if(state == TextController.STATE.FIRSTALGORITM){
-            returedText = alg.encryptionText(text,text1);
-        }else if(state == TextController.STATE.SECONDALGORITM){
-            returedText = alg2.encryptionText(text,text1);
+        String returnedText;
+        if(state == TextController.STATE.FIRSTALGORITHM){
+            returnedText = alg.encryptionText(text,text1);
+        }else if(state == TextController.STATE.SECONDALGORITHM){
+            returnedText = alg2.encryptionText(text,text1);
         }else{
-            returedText = alg3.encryptionText(text,text1);
+            returnedText = alg3.encryptionText(text,text1);
         }
 
 
 
-       return returedText;
+       return returnedText;
     }
 }

@@ -52,8 +52,8 @@ public class Text3Controller {
     }
     
 
-    public void switchToAlg1Text() {
-
+    public void switchToAlg1Text() throws IOException {
+        App.setRoot("Text3");
     }
 
     public void switchToAlg2File() throws IOException {
@@ -69,7 +69,6 @@ public class Text3Controller {
         if (state == STATE.WORKING) {
 
             state = STATE.STOP;
-
 
         } else {
 

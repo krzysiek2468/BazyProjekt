@@ -34,62 +34,62 @@ public class TextController {
 
     public static enum STATE
     {
-        FIRSTALGORITM,
-        SECONDALGORITM,
-        THIRDALGORITM
+        FIRSTALGORITHM,
+        SECONDALGORITHM,
+        THIRDALGORITHM
     }
-    public static STATE state = STATE.FIRSTALGORITM;
+    public static STATE state = STATE.FIRSTALGORITHM;
 
 
     // changing algoritm in lesson
 
     @FXML
-    public void switchToAlg1File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg1File() throws IOException {
         clearFields();
-        FilesController.state = FilesController.STATE.FIRSTALGORITM;
+        FilesController.state = FilesController.STATE.FIRSTALGORITHM;
         App.setRoot("Files");
     }
 
     @FXML
-    public void switchToAlg2File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg2File() throws IOException {
         clearFields();
-        FilesController.state = FilesController.STATE.SECONDALGORITM;
+        FilesController.state = FilesController.STATE.SECONDALGORITHM;
         App.setRoot("Files");
     }
 
     @FXML
-    public void switchToAlg3File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg3File() throws IOException {
         clearFields();
-        FilesController.state = FilesController.STATE.THIRDALGORITM;
+        FilesController.state = FilesController.STATE.THIRDALGORITHM;
         App.setRoot("Files");
     }
 
     @FXML
-    public void switchToAlg1Text(ActionEvent actionEvent) {
-        if(state != STATE.FIRSTALGORITM){
+    public void switchToAlg1Text() {
+        if(state != STATE.FIRSTALGORITHM){
             clearFields();
-            state = STATE.FIRSTALGORITM;
+            state = STATE.FIRSTALGORITHM;
         }
 
     }
 
     @FXML
-    public void switchToAlg2Text(ActionEvent actionEvent) {
-        if(state != STATE.SECONDALGORITM){
+    public void switchToAlg2Text() {
+        if(state != STATE.SECONDALGORITHM){
             clearFields();
-            state = STATE.SECONDALGORITM;
+            state = STATE.SECONDALGORITHM;
         }
     }
 
     @FXML
-    public void switchToAlg3Text(ActionEvent actionEvent) {
-        if(state != STATE.THIRDALGORITM){
+    public void switchToAlg3Text() {
+        if(state != STATE.THIRDALGORITHM){
             clearFields();
-            state = STATE.THIRDALGORITM;
+            state = STATE.THIRDALGORITHM;
         }
     }
 
-    // to clear fields when  changing algoritm or mode
+    // to clear fields when  changing algorithm or mode
     public void clearFields(){
         toKeyWriteField.clear();
         toWriteField.clear();
@@ -101,34 +101,34 @@ public class TextController {
     //empty for now
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) {
-
+    public void switchLesson1() throws IOException {
+        App.setRoot("Text");
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent) throws IOException {
+    public void switchLesson2() throws IOException {
         App.setRoot("Text2");
 
     }
     @FXML
-    public void switchLesson3(ActionEvent actionEvent) throws IOException {
+    public void switchLesson3() throws IOException {
         App.setRoot("Text3");
     }
     @FXML
-    public void switchLesson4(ActionEvent actionEvent) {
-
+    public void switchLesson4() throws IOException {
+        App.setRoot("Text4");
     }
 
     @FXML
-    public void submit(ActionEvent actionEvent) {
+    public void submit() {
         if(toWriteField.getText().isEmpty()==true || toKeyWriteField.getText().isEmpty()==true ) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text, or key");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
         }else if(checkKeyValidation(toKeyWriteField.getText()) == false){
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Your kay in invalid");
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Your key in invalid");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -146,7 +146,7 @@ public class TextController {
             toKeyWriteField.clear();
 
             Stage stage = (Stage) primaryText.getScene().getWindow();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
@@ -154,10 +154,10 @@ public class TextController {
     }
 
     public boolean checkKeyValidation(String text){
-        if(state == STATE.FIRSTALGORITM){
+        if(state == STATE.FIRSTALGORITHM){
             RailFence alg = new RailFence();
             return alg.checkKey(text);
-        }else if(state == STATE.SECONDALGORITM){
+        }else if(state == STATE.SECONDALGORITHM){
             PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
             return  alg2.checkKey(text);
         }else{

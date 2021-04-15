@@ -10,8 +10,6 @@ import java.util.List;
 
 public class SteamCipher {
 
-
-
     public boolean checkKeys( String ziarno, String wielomian) {
         int counter = 0;
         if(wielomian.length() == ziarno.length() )
@@ -55,7 +53,7 @@ public class SteamCipher {
 
     }
 
-    public String algoritm(String text, String text1, String text2){
+    public String algorithm(String text, String text1, String text2){
         StringBuilder bytesText = new StringBuilder();
         for(int i=0;i<text.length();i++){
             String letter = text;
@@ -87,16 +85,11 @@ public class SteamCipher {
     }
 
     public String encode(String text, String text1, String text2){
-        return  algoritm(text ,text1 ,text2);
+        return  algorithm(text ,text1 ,text2);
     }
 
-
-
-
-
-
     public String decode(String text, String text1, String text2){
-        return  algoritm(text ,text1 ,text2);
+        return  algorithm(text ,text1 ,text2);
     }
 
     // text wielomian // text1 ziarno // text2 do odczytu text3 do zapisu
@@ -105,7 +98,7 @@ public class SteamCipher {
         List<String> lista = new ArrayList<>();
         for (String line : lines) {
 
-            lista.add(algoritm(line , text1, text)) ;
+            lista.add(algorithm(line , text1, text)) ;
 
         }
 
@@ -124,7 +117,7 @@ public class SteamCipher {
         List<String> lista = new ArrayList<>();
         for (String line : lines) {
 
-            lista.add(algoritm(line , text1, text)) ;
+            lista.add(algorithm(line , text1, text)) ;
 
         }
 

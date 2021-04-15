@@ -47,58 +47,58 @@ public class Text2Controller {
 
     public static enum STATE
     {
-        FIRSTALGORITM,
-        SECONDALGORITM,
-        THIRDALGORITM
+        FIRSTALGORITHM,
+        SECONDALGORITHM,
+        THIRDALGORITHM
     }
-    public static STATE state = STATE.FIRSTALGORITM;
+    public static STATE state = STATE.FIRSTALGORITHM;
 
 
-    // changing algoritm in lesson
+    // changing algorithm in lesson
 
     @FXML
-    public void switchToAlg1File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg1File() throws IOException {
         clearFields();
-        Files2Controller.state = Files2Controller.STATE.FIRSTALGORITM;
+        Files2Controller.state = Files2Controller.STATE.FIRSTALGORITHM;
         App.setRoot("Files2");
     }
 
     @FXML
-    public void switchToAlg2File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg2File() throws IOException {
         clearFields();
-        Files2Controller.state = Files2Controller.STATE.SECONDALGORITM;
+        Files2Controller.state = Files2Controller.STATE.SECONDALGORITHM;
         App.setRoot("Files2");
     }
 
     @FXML
-    public void switchToAlg3File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg3File() throws IOException {
         clearFields();
-        Files2Controller.state = Files2Controller.STATE.THIRDALGORITM;
+        Files2Controller.state = Files2Controller.STATE.THIRDALGORITHM;
         App.setRoot("Files2");
     }
 
     @FXML
-    public void switchToAlg1Text(ActionEvent actionEvent) {
-        if(state != STATE.FIRSTALGORITM){
+    public void switchToAlg1Text() {
+        if(state != STATE.FIRSTALGORITHM){
             clearFields();
-            state = STATE.FIRSTALGORITM;
+            state = STATE.FIRSTALGORITHM;
         }
 
     }
 
     @FXML
-    public void switchToAlg2Text(ActionEvent actionEvent) {
-        if(state != STATE.SECONDALGORITM){
+    public void switchToAlg2Text() {
+        if(state != STATE.SECONDALGORITHM){
             clearFields();
-            state = STATE.SECONDALGORITM;
+            state = STATE.SECONDALGORITHM;
         }
     }
 
     @FXML
-    public void switchToAlg3Text(ActionEvent actionEvent) {
-        if(state != STATE.THIRDALGORITM){
+    public void switchToAlg3Text() {
+        if(state != STATE.THIRDALGORITHM){
             clearFields();
-            state = STATE.THIRDALGORITM;
+            state = STATE.THIRDALGORITHM;
         }
     }
 
@@ -117,25 +117,25 @@ public class Text2Controller {
     //empty for now
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) throws IOException {
+    public void switchLesson1() throws IOException {
         App.setRoot("Text");
 
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent)  {
-
+    public void switchLesson2() throws IOException {
+        App.setRoot("Text2");
     }
     @FXML
-    public void switchLesson3(ActionEvent actionEvent) throws IOException {
+    public void switchLesson3() throws IOException {
         App.setRoot("Text3");
     }
     @FXML
-    public void switchLesson4(ActionEvent actionEvent) {
-
+    public void switchLesson4() throws IOException {
+        App.setRoot("Text4");
     }
 
     @FXML
-    public void submit(ActionEvent actionEvent) {
+    public void submit() {
         if(toWriteField.getText().isEmpty()==true || toKeyWriteField.getText().isEmpty()==true ) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
@@ -169,7 +169,7 @@ public class Text2Controller {
         }
     }
     @FXML
-    public void submit1(ActionEvent actionEvent) {
+    public void submit1() {
         if(toWriteField1.getText().isEmpty()==true || toKeyWriteField1.getText().isEmpty()==true ) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Write text or key");
@@ -204,10 +204,10 @@ public class Text2Controller {
     }
 
     public boolean checkKeyValidation(String text){
-        if(state == STATE.FIRSTALGORITM){
+        if(state == STATE.FIRSTALGORITHM){
             PrzestawienieMacierzowe3 alg = new PrzestawienieMacierzowe3();
             return alg.checkKey(text);
-        }else if(state == STATE.SECONDALGORITM){
+        }else if(state == STATE.SECONDALGORITHM){
             SzyfrCezara alg2 = new SzyfrCezara();
             return  alg2.checkKey(text);
         }else{

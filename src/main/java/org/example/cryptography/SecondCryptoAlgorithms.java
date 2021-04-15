@@ -27,20 +27,20 @@ public class SecondCryptoAlgorithms {
             String line = Files.readString(Paths.get(path));
             List<String> encrypted;
             if(zeroForEncryptionOneForDecryption == 0){
-                if (state == Files2Controller.STATE.FIRSTALGORITM) {
+                if (state == Files2Controller.STATE.FIRSTALGORITHM) {
                     //pierwszy algorytm szyfrowanie
                     encrypted = alg.encryption(lines , path3);
 
-                } else if(state == Files2Controller.STATE.SECONDALGORITM) {
+                } else if(state == Files2Controller.STATE.SECONDALGORITHM) {
                     //drugi algorytm szyfrowanie
                     encrypted = alg2.encryption(lines,path3);
                 } else {
                     encrypted = alg3.encryption(lines,path3);
                 }
             } else {
-                if(state == Files2Controller.STATE.FIRSTALGORITM){
+                if(state == Files2Controller.STATE.FIRSTALGORITHM){
                     encrypted = alg.decryption(lines,path3);
-                }else if(state == Files2Controller.STATE.SECONDALGORITM){
+                }else if(state == Files2Controller.STATE.SECONDALGORITHM){
                     encrypted = alg2.decryption(lines,path3);
                 }else{
                     encrypted = alg3.decryption(lines,path3);
@@ -63,9 +63,9 @@ public class SecondCryptoAlgorithms {
 
     public String encryptionText(String text, String text1, Text2Controller.STATE state) {
         String returedText;
-        if(state == Text2Controller.STATE.FIRSTALGORITM) {
+        if(state == Text2Controller.STATE.FIRSTALGORITHM) {
             returedText = alg.encryptionText(text,text1);
-        } else if(state == Text2Controller.STATE.SECONDALGORITM) {
+        } else if(state == Text2Controller.STATE.SECONDALGORITHM) {
             returedText = alg2.encryptionText(text,text1);
         } else {
             returedText = alg3.encryptionText(text,text1);
@@ -75,10 +75,10 @@ public class SecondCryptoAlgorithms {
 
     public String decryptionText(String text, String text1, Text2Controller.STATE state) {
         String returnedText;
-        if (state == Text2Controller.STATE.FIRSTALGORITM) {
+        if (state == Text2Controller.STATE.FIRSTALGORITHM) {
             returnedText = alg.decryptionText(text,text1);
 
-        } else if (state == Text2Controller.STATE.SECONDALGORITM) {
+        } else if (state == Text2Controller.STATE.SECONDALGORITHM) {
             returnedText = alg2.decryptionText(text,text1);
 
         } else{
@@ -87,4 +87,3 @@ public class SecondCryptoAlgorithms {
         return returnedText;
     }
 }
-

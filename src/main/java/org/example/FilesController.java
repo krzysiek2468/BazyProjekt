@@ -1,6 +1,5 @@
 package org.example;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -51,41 +50,41 @@ public class FilesController {
     public StackPane primaryPane;
 
 
-    // states to change algoritms in one lesson
+    // states to change algorithms in one lesson
     public static enum STATE
     {
-        FIRSTALGORITM,
-        SECONDALGORITM,
-        THIRDALGORITM
+        FIRSTALGORITHM,
+        SECONDALGORITHM,
+        THIRDALGORITHM
     }
-    public static STATE state = STATE.FIRSTALGORITM;
+    public static STATE state = STATE.FIRSTALGORITHM;
 
 
-    // changing algoritm in lesson
+    // changing algorithm in lesson
 
     @FXML
     public void switchToAlg1File() {
-        if(state != STATE.FIRSTALGORITM){
+        if(state != STATE.FIRSTALGORITHM){
             clearFields();
-            state = STATE.FIRSTALGORITM;
+            state = STATE.FIRSTALGORITHM;
             System.out.println("1");
         }
     }
 
     @FXML
     public void switchToAlg2File() {
-        if(state != STATE.SECONDALGORITM){
+        if(state != STATE.SECONDALGORITHM){
             clearFields();
-            state = STATE.SECONDALGORITM;
+            state = STATE.SECONDALGORITHM;
             System.out.println("2");
         }
     }
 
     @FXML
     public void switchToAlg3File() {
-        if(state != STATE.THIRDALGORITM){
+        if(state != STATE.THIRDALGORITHM){
             clearFields();
-            state = STATE.THIRDALGORITM;
+            state = STATE.THIRDALGORITHM;
             System.out.println("3");
         }
     }
@@ -93,21 +92,21 @@ public class FilesController {
     @FXML
     public void switchToAlg1Text() throws IOException {
         clearFields();
-        TextController.state = TextController.STATE.FIRSTALGORITM;
+        TextController.state = TextController.STATE.FIRSTALGORITHM;
         App.setRoot("Text");
     }
 
     @FXML
     public void switchToAlg2Text() throws IOException {
         clearFields();
-        TextController.state = TextController.STATE.SECONDALGORITM;
+        TextController.state = TextController.STATE.SECONDALGORITHM;
         App.setRoot("Text");
     }
 
     @FXML
     public void switchToAlg3Text() throws IOException {
         clearFields();
-        TextController.state = TextController.STATE.THIRDALGORITM;
+        TextController.state = TextController.STATE.THIRDALGORITHM;
         App.setRoot("Text");
     }
 
@@ -125,8 +124,8 @@ public class FilesController {
     //empty for now
 
     @FXML
-    public void switchLesson1() {
-
+    public void switchLesson1() throws IOException {
+        App.setRoot("Files");
     }
     @FXML
     public void switchLesson2() throws IOException {
@@ -250,7 +249,7 @@ public class FilesController {
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(filePathCorect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true){
+        }else if(filePathCorrect(encryptionPath1.getText(),encryptionPath2.getText(),0)==true){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files pahts");
             alert.initModality(Modality.APPLICATION_MODAL);
@@ -288,7 +287,7 @@ public class FilesController {
             alert.initModality(Modality.APPLICATION_MODAL);
             alert.initOwner(stage);
             alert.showAndWait();
-        }else if(filePathCorect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true){
+        }else if(filePathCorrect(decryptionPath1.getText() , decryptionPath2.getText() ,1)==true){
             Stage stage = (Stage) primaryPane.getScene().getWindow();
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong file or files paths");
             alert.initModality(Modality.APPLICATION_MODAL);
@@ -312,14 +311,14 @@ public class FilesController {
                 decryptionKey.clear();
 
                 Stage stage = (Stage) primaryPane.getScene().getWindow();
-                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Succes");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "Success");
                 alert.initModality(Modality.APPLICATION_MODAL);
                 alert.initOwner(stage);
                 alert.showAndWait();
             }
         }
 
-        public boolean filePathCorect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
+        public boolean filePathCorrect(String path1 , String path2 , int zeroForEncryptionOneForDecryption){
         Boolean exception = false;
             try {
                 Files.readAllLines(Paths.get(path1));
@@ -351,10 +350,10 @@ public class FilesController {
         }
 
         public boolean checkKeyValidation(String text){
-        if(state == STATE.FIRSTALGORITM){
+        if(state == STATE.FIRSTALGORITHM){
             RailFence alg = new RailFence();
            return alg.checkKey(text);
-        }else if(state ==STATE.SECONDALGORITM){
+        }else if(state ==STATE.SECONDALGORITHM){
             PrzestawienieMacierzowe1 alg2 =new PrzestawienieMacierzowe1();
             return  alg2.checkKey(text);
         }else{

@@ -50,10 +50,12 @@ public class Text4Controller {
         App.setRoot("Text4");
     }
 
+    @FXML
     public void switchToAlgText() throws IOException {
         App.setRoot("Text4");
     }
 
+    @FXML
     public void switchToAlgFiles() throws IOException {
         App.setRoot("Files4");
     }

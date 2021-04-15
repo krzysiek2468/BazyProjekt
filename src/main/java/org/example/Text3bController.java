@@ -41,37 +41,37 @@ public class Text3bController {
     public StackPane primaryText;
 
     @FXML
-    public void switchLesson1(ActionEvent actionEvent) throws IOException {
+    public void switchLesson1() throws IOException {
         App.setRoot("Text");
 
     }
     @FXML
-    public void switchLesson2(ActionEvent actionEvent) throws IOException {
+    public void switchLesson2() throws IOException {
         App.setRoot("Text2");
     }
     @FXML
-    public void switchLesson3(ActionEvent actionEvent) {
+    public void switchLesson3() {
 
     }
     @FXML
-    public void switchLesson4(ActionEvent actionEvent) {
+    public void switchLesson4() {
 
     }
 
 
-    public void switchToAlg1Text(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg1Text() throws IOException {
         App.setRoot("Text3");
     }
 
-    public void switchToAlg2File(ActionEvent actionEvent) throws IOException {
+    public void switchToAlg2File() throws IOException {
         App.setRoot("Files3");
     }
 
-    public void switchToAlg2Text(ActionEvent actionEvent) {
+    public void switchToAlg2Text() {
     }
 
 
-    public void submit(ActionEvent actionEvent) {
+    public void submit() {
         SteamCipher algoritm = new SteamCipher();
         if (toWriteField.getText().isEmpty() == true || toKeyWriteField.getText().isEmpty() == true || toKeyWriteField2.getText().isEmpty() == true) {
             Stage stage = (Stage) primaryText.getScene().getWindow();
@@ -101,7 +101,7 @@ public class Text3bController {
 
     }
 
-    public void submit1(ActionEvent actionEvent) {
+    public void submit1() {
         SteamCipher algoritm = new SteamCipher();
             if (toWriteField1.getText().isEmpty() == true || toKeyWriteField1.getText().isEmpty() == true || toKeyWriteField11.getText().isEmpty() == true) {
                 Stage stage = (Stage) primaryText.getScene().getWindow();

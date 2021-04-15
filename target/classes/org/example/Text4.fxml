@@ -25,8 +25,8 @@
                              <Font name="System Bold" size="12.0" />
                          </font>
                      </Label>
-                     <JFXButton fx:id="FT1" alignment="CENTER" onAction="#switchToAlgText" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="TEXT" />
-                     <JFXButton fx:id="FF1" alignment="CENTER" onAction="#switchToAlgFiles" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="FILES" />
+                     <JFXButton fx:id="FT" alignment="CENTER" onAction="#switchToAlgText" prefHeight="47.0" prefWidth="120.0" styleClass="button1" stylesheets="@../../style.css" text="TEXT" />
+                     <JFXButton fx:id="FF" alignment="CENTER" onAction="#switchToAlgFiles" prefHeight="47.0" prefWidth="120.0" styleClass="button3" stylesheets="@../../style.css" text="FILES" />
                  </children>
              </VBox>
          </left>
@@ -35,7 +35,7 @@
             <children>
                <Label alignment="CENTER" layoutX="117.0" layoutY="5.0" prefHeight="30.0" prefWidth="372.0" text="ENCRYPTION" />
                <JFXTextField fx:id="toWriteTextEncryption" layoutX="32.0" layoutY="65.0" prefHeight="30.0" prefWidth="550.0" promptText="Tekst jawny" />
-               <JFXButton fx:id="encryptionButton" alignment="CENTER" layoutX="242.0" layoutY="204.0"  prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
+               <JFXButton fx:id="encryptionButton" alignment="CENTER" layoutX="242.0" layoutY="204.0" prefHeight="35.0" prefWidth="130.0" styleClass="button2" stylesheets="@../../style.css" text="SUBMIT" textAlignment="CENTER" />
                <JFXTextArea fx:id="encryptionResult" layoutX="32.0" layoutY="124.0" prefHeight="30.0" prefWidth="550.0" />
                <Label alignment="CENTER" layoutX="122.0" layoutY="269.0" prefHeight="30.0" prefWidth="372.0" text="DECRYPTION" textAlignment="CENTER" />
                <JFXTextField fx:id="toWriteTextDecryption" layoutX="32.0" layoutY="331.0" prefHeight="30.0" prefWidth="550.0" promptText="Tekst zaszyfrowany" />
